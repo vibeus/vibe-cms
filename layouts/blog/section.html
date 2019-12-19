@@ -1,0 +1,45 @@
+{{ define "stylesheets" }}
+{{ $sass := resources.Get "css/blog/styles.sass" }}
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ end }}
+
+{{ define "main" }}
+
+{{ partial "common/hero.html" . }}
+
+<section class="section is-blog-list">
+  <div class="container">
+    <div class="columns is-multiline">
+      {{ range .Pages }}
+      <div class="column is-one-third">
+        <a href="{{ .URL | relURL }}">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                {{ $cover := .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
+                {{ if $cover }}
+                <img src="{{ $cover.Permalink }}" alt="$cover.Name">
+                {{ else }}
+                {{ $default := resources.Get "img/blog/default-cover.png" }}
+                <img src="{{ $default.Permalink }}" alt="$default.Name">
+                {{ end }}
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h2>{{ .Title }}</h2>
+                <p class="summary">
+                {{ .Summary | plainify | safeHTML }}
+                </p>
+              </div>
+              <div class="more">Read More &gt;</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

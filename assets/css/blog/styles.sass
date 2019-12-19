@@ -1,0 +1,60 @@
+@import "bulma/sass/utilities/_all.sass"
+
+.hero.is-vibe-blog
+  background: rgba(242, 242, 242, 0.3)
+
+  .image.is-hero
+    width: 480px
+    height: 500px
+    margin-left: auto
+
+  .hero-body
+    padding-bottom: 0
+
+  .columns
+    +mobile
+     display: flex
+     flex-direction: column-reverse
+
+.section.is-blog-list
+  .column
+    padding: 1.25rem 1rem
+
+  .card-image
+    width: 100%
+    padding-top: 56.25% // keep .card-image 16:9 as place holder
+    overflow: hidden
+
+    .image
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+  .card, .card .image
+    transition: 0.2s
+
+  .card:not(:hover)
+    box-shadow: rgba(10, 10, 10, 0.0) 0px 8px
+
+    .image
+      left: 1.5rem
+      top: 1.5rem
+      right: 1.5rem
+
+  h2, p.summary
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 3
+
+  .more
+    font-weight: bold
+    color: #463FF4

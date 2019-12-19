@@ -1,3 +1,0 @@
-+++
-title = "Interactive Collaboration Board"
-+++

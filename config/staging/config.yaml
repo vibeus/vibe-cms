@@ -1,1 +1,3 @@
 baseURL: https://vibe-beta.com/blog
+buildExpired: false
+buildDrafts: true
