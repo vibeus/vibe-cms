@@ -1,5 +1,31 @@
+{{ define "stylesheets" }}
+{{ $sass := resources.Get "css/blog/styles.sass" }}
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ end }}
 {{ define "main" }}
-<div class="content">
-  {{ .Content }}
-</div>
+<section class="hero is-blog-content">
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <div class="columns is-vcentered">
+        <div class="column is-7">
+          <div class="title has-text-white">{{ .Title }}</div>
+        </div>
+      </div>
+      {{ with .Resources.GetMatch "cover.{jpg,png}" }}
+      <figure class="image is-cover">
+        <img src={{ .Permalink }} alt={{ .Name }} />
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section is-blog-content">
+  <div class="container">
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
 {{ end }}

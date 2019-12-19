@@ -13,8 +13,8 @@
 
   .columns
     +mobile
-     display: flex
-     flex-direction: column-reverse
+      display: flex
+      flex-direction: column-reverse
 
 .section.is-blog-list
   .column
@@ -58,3 +58,34 @@
   .more
     font-weight: bold
     color: #463FF4
+
+.hero.is-blog-content
+  background: #6E7EC1
+  .container, .container .columns
+    height: 100%
+
+  .image.is-cover
+    display: none
+
+  +desktop
+    height: 500px
+
+    .title
+      position: relative
+      z-index: 1
+
+    .image.is-cover
+      display: block
+      max-width: 680px
+      position: absolute
+      top: 3rem
+      right: 0
+
+.section.is-blog-content
+  .container
+    max-width: 680px
+
+  +desktop
+    img[src='cover.jpg'], img[src='cover.png']
+      display: none
+
