@@ -3,17 +3,10 @@ languageCode: en-us
 title: Vibe
 log: true
 verbose: true
-enableRobotsTXT: true
+enableRobotsTXT: false
 disableKinds:
   - taxonomy
   - taxonomyTerm
+buildDrafts: true
 buildExpired: true
-params:
-  defaultDescription: Vibe packs digital whiteboard technology, video conferencing, wireless screencasting, third-party app integrations, and more into a sleek package.
-  appURL: https://app.vibe-beta.com/
-  apiURL: https://api.vibe-beta.com/v1/
-  allowIndex: false
-
-module:
-  imports:
-    - path: github.com/vibeus/hugo-common
+buildFuture: true

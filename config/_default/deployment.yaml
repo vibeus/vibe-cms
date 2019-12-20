@@ -1,0 +1,16 @@
+targets:
+  - name: aws-staging
+    # Use a separate bucket before blog is merged into main site.
+    URL: "s3://blog.vibe-beta.com?region=us-west-2"
+    cloudFrontDistributionID: ENEIH6240I3TC
+
+matchers:
+  - pattern: "^.+\\.(js|css|svg|ttf)$"
+    cacheControl: "max-age=31536000, no-transform, public"
+    gzip: true
+  - pattern: "^.+\\.(png|jpg)$"
+    cacheControl: "max-age=31536000, no-transform, public"
+    gzip: true
+  - pattern: "^.+\\.(html|xml|json)$"
+    cacheControl: "max-age=31536000, no-transform, public"
+    gzip: true

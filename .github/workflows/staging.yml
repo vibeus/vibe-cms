@@ -1,0 +1,44 @@
+name: "Staging Deployment"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Set up Go 1.12
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.12
+    - uses: actions/checkout@v1
+      with:
+        lfs: true
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Cache Go modules
+      uses: actions/cache@v1
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Setup Hugo 0.61.0
+      run: |
+        HUGO_VER=0.61.0
+        HUGO_ZIP=hugo_extended_${HUGO_VER}_Linux-64bit.tar.gz
+        curl -OL https://github.com/gohugoio/hugo/releases/download/v$HUGO_VER/$HUGO_ZIP
+        sudo tar xf $HUGO_ZIP -C /usr/local/bin hugo
+        rm -f $HUGO_ZIP
+    - name: Yarn install
+      run: yarn install
+    - name: Hugo build
+      run: hugo -e staging --buildExpired # build expired (dev blogs) before paper -> md script is ready
+    - name: Hugo deploy
+      env:
+        AWS_DEFAULT_REGION: us-west-2
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: hugo deploy --target aws-staging --invalidateCDN
