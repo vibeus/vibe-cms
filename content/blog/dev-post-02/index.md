@@ -15,7 +15,7 @@ They also appear to work as intended — according to [McKinsey and Company]
 
 To build a collaborative workspace for your organization, you need the right layout, the right collaborative tools, and the right mindset. Are you ready to make the shift?
 
-## What is a collaborative workspace?
+# What is a collaborative workspace?
 
 Collaborative workspaces are defined by their best qualities — diversity, inclusivity, and empowerment — more than their physical arrangements.
 
@@ -34,7 +34,7 @@ Some settings will serve multiple uses. An office bar — complete with craf
 
 ![](https://lh4.googleusercontent.com/gZ8GNCvqmwqyTYjPqSk-ReBNHw-6DMnXkAgQNJkKegZDl13VOBV839DVbFYbFaVlyq7XM3KPQ5d630YbhYWE7cLpnvKhfUaox_m2u9v251cY4MMqYhw6jWc8KBAq_3G5yOtIHWTE)
 
-## Why Develop Collaborative Workspaces?
+# Why Develop Collaborative Workspaces?
 
 The design of a space can dramatically [transform collaborative experiences and outcomes](https://www.ciphr.com/features/how-does-office-design-affect-productivity/) of the work done there.
 
@@ -46,7 +46,8 @@ As work cultures have evolved to center collaboration over solitary deliberation
 
 Amenities that make collaboration more natural, from good lighting to healthy snacks in kitchens, are growing in popularity to meet the needs of an evolving workforce.
 
-## New Tools
+
+# New Tools
 
 Technology makes the fostering of a team-forward work environment possible as well. A tech stack including tools like [Asana, Flowmap, and Trello](https://vibe.us/product/) can connect people virtually to work on the same project, at the same time, from anywhere. They help enable collaboration without making physical proximity necessary.
 
@@ -56,7 +57,9 @@ The [Vibe digital whiteboard](https://order.vibe.us/) even includes integrations
 
 ![](https://lh6.googleusercontent.com/jrRkPEFP-3kEyisRRejN_KMJuJJQloIC4RuyfcEvdhXsPdA-ho5ALkupDZ511EvDuC2X5RT1a77-njsBeBYo6nZ_6lGprKSCs0FTWKyvyDWAYyFD2VU_bl51_sAqAXZbko3hhYcf)
 
-## Co-working for coworkers
+
+
+# Co-working for coworkers
 
 As more companies collaborate with freelancers, consultants, and contract workers — often remotely — the physical workspace has changed to meet these new expectations.
 
@@ -65,19 +68,21 @@ Co-working has gone from an informal practice, established by freelancers and cr
 Collaborative spaces now need to include technology to connect in-house staff with freelancers, contractors, clients, even remote offices halfway around the world. The ability to [screen-share to and from mobile](https://vibe.us/product/#all-in-one) allows your team to comfortably collaborate from any space, in-house or remote.
 
 
-## What does a collaborative workspace look like?
+# What does a collaborative workspace look like?
+## Here are a few of our favorite examples:
 
-Here are a few of our favorite examples:
 
 ![](https://lh6.googleusercontent.com/PFBHg3LnEzmwxvgUE_AXQk_fqpcrhhQneLAFWM6HVNdDvsO6sm-sjjEZe8Q1-pFX8v9CMrhStSNqJC-NRt-UB6YNGQeywJSfzMSdsIwM0VS2jt8Dp_zMp__lFuytsoTy_4hClPrh)
 
 
 Spotify provides a variety of different spaces throughout their office to curate feel for their employees. Many of these spaces are more like those you’d find in a university library or hip cafe than a classic corporate office.
 
+
 ![](https://lh5.googleusercontent.com/F0DQORoo7GlxJS2Oewj8ZqCRGy1Tta38gqhAQfRI0xWBs4YbwQuxUKh1MEFDUDn2kR6nt7MJP8QBbzkK1xIkw7C6_PL9gKmKE0WdeagE8rmV6Xp2rHdeAdxHvNRTRYQQMWPz73rm)
 
 
 Slack’s San Francisco HQ features a “forest floor” to introduce the calmness of the natural environment to the collaborative experience.
+
 
 ![](https://lh5.googleusercontent.com/x7CwVIKuGOQvq4oFRYDPVt1tgoMeZu-ZyTF-GpZ5Xlgtk0UVEdGMpYQ4Ke_UWLWtVvL1OeH4Kn-lgoSpv9YV910-wZ5zQpUlIqstJLHLvI3lvLKgqTkd3l2k09yJiWS0XyC4Y3oU)
 
@@ -85,5 +90,5 @@ Slack’s San Francisco HQ features a “forest floor” to introduce the calmne
 Google’s second location on LA’s westside is housed in the old Spruce Goose hangar. They refit this massive open space with a variety of smaller collaborative nooks to give it context and proportion, creating “spaces that are moldable and flexible,” according to Google spokesperson Katherine Will.
 
 Want better tools for seamless collaboration? Our team is ready to talk.
-Connect with us.
 
+Connect with us.

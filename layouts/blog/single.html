@@ -7,11 +7,7 @@
 <section class="hero is-blog-content">
   <div class="hero-body">
     <div class="container has-text-white">
-      <div class="columns is-vcentered">
-        <div class="column is-7">
-          <div class="title has-text-white">{{ .Title }}</div>
-        </div>
-      </div>
+      <h1 class="title has-text-white">{{ .Title }}</h1>
       {{ with .Resources.GetMatch "cover.{jpg,png}" }}
       <figure class="image is-cover">
         <img src={{ .Permalink }} alt={{ .Name }} />

@@ -35,7 +35,7 @@ jobs:
     - name: Yarn install
       run: yarn install
     - name: Hugo build
-      run: hugo -e staging --buildExpired # build expired (dev blogs) before paper -> md script is ready
+      run: hugo -e staging --minify --buildExpired # build expired (dev blogs) before paper -> md script is ready
     - name: Hugo deploy
       env:
         AWS_DEFAULT_REGION: us-west-2

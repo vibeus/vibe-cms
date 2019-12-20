@@ -61,8 +61,17 @@
 
 .hero.is-blog-content
   background: #6E7EC1
-  .container, .container .columns
-    height: 100%
+  .hero-body
+    display: flex
+
+  .container
+    display: flex
+    flex: 1
+
+  .title
+    max-width: 60%
+    align-self: center
+    margin-bottom: 0
 
   .image.is-cover
     display: none
@@ -76,16 +85,22 @@
 
     .image.is-cover
       display: block
-      max-width: 680px
+      width: 600px
+      height: 500px
       position: absolute
-      top: 3rem
       right: 0
+
+      img
+        height: 100%
+        object-fit: cover
 
 .section.is-blog-content
   .container
     max-width: 680px
 
-  +desktop
-    img[src='cover.jpg'], img[src='cover.png']
-      display: none
+    +desktop
+      img[src='cover.jpg'], img[src='cover.png']
+        display: none
+
+      margin-top: 4rem
 
