@@ -1,7 +1,7 @@
 {{ define "stylesheets" }}
 {{ $sass := resources.Get "css/blog/styles.sass" }}
-{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules")) | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity={{ $style.Data.Integrity }} />
 {{ end }}
 
 {{ define "main" }}
@@ -13,16 +13,16 @@
     <div class="columns is-multiline">
       {{ range .Pages }}
       <div class="column is-one-third">
-        <a href="{{ .URL | relURL }}">
+        <a href="{{ .RelPermalink }}">
           <div class="card">
             <div class="card-image">
               <figure class="image">
-                {{ $cover := .Resources.GetMatch "cover.{jpg,png}" }}
+                {{ $cover := .Resources.GetMatch "cover.{jpg,png}" | resources.Fingerprint }}
                 {{ if $cover }}
-                <img src="{{ $cover.Permalink }}" alt="$cover.Name">
+                <img src="{{ $cover.Permalink }}" alt="{{ $cover.Name }}">
                 {{ else }}
-                {{ $default := resources.Get "img/blog/default-cover.png" }}
-                <img src="{{ $default.Permalink }}" alt="$default.Name">
+                {{ $default := resources.Get "img/blog/default-cover.png" | resources.Fingerprint }}
+                <img src="{{ $default.Permalink }}" alt="{{ $default.Name }}">
                 {{ end }}
               </figure>
             </div>

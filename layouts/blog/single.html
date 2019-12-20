@@ -1,7 +1,7 @@
 {{ define "stylesheets" }}
 {{ $sass := resources.Get "css/blog/styles.sass" }}
-{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules")) | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity={{ $style.Data.Integrity }} />
 {{ end }}
 {{ define "main" }}
 <section class="hero is-blog-content">
