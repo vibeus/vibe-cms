@@ -7,6 +7,11 @@ enableRobotsTXT: false
 disableKinds:
   - taxonomy
   - taxonomyTerm
+  - sitemap
+  - RSS
+  - home
+  - robotsTXT
+  - "404"
 buildDrafts: true
 buildExpired: true
 buildFuture: true
