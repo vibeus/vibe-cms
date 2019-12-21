@@ -1,4 +1,5 @@
 @import "bulma/sass/utilities/_all.sass"
+@import "../_mixins.sass"
 
 .hero.is-vibe-blog
   background: rgba(242, 242, 242, 0.3)
@@ -11,11 +12,6 @@
   .hero-body
     padding-bottom: 0
 
-  .columns
-    +mobile
-      display: flex
-      flex-direction: column-reverse
-
 .section.is-blog-list
   .column
     padding: 1.25rem 1rem
@@ -26,11 +22,7 @@
     overflow: hidden
 
     .image
-      position: absolute
-      left: 0
-      right: 0
-      top: 0
-      bottom: 0
+      +absolute-fill
 
       img
         width: 100%
@@ -40,13 +32,14 @@
   .card, .card .image
     transition: 0.2s
 
-  .card:not(:hover)
-    box-shadow: rgba(10, 10, 10, 0.0) 0px 8px
+  +tablet
+    .card:not(:hover)
+      box-shadow: rgba(10, 10, 10, 0.0) 0px 8px
 
-    .image
-      left: 1.5rem
-      top: 1.5rem
-      right: 1.5rem
+      .image
+        left: 1.5rem
+        top: 1.5rem
+        right: 1.5rem
 
   h2, p.summary
     overflow: hidden
@@ -93,6 +86,10 @@
       img
         height: 100%
         object-fit: cover
+
+      .overlay
+        +absolute-fill
+        background: rgba(0, 0, 0, 0.2)
 
 .section.is-blog-content
   .container

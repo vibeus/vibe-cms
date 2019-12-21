@@ -11,6 +11,7 @@
       {{ with .Resources.GetMatch "cover.{jpg,png}" }}
       <figure class="image is-cover">
         <img src={{ .Permalink }} alt={{ .Name }} />
+        <div class="overlay" />
       </figure>
       {{ end }}
     </div>
