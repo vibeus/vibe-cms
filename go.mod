@@ -2,4 +2,4 @@ module github.com/vibeus/vibe-blog
 
 go 1.12
 
-require github.com/vibeus/hugo-common v0.0.0-20191226202828-03e288b0baf6 // indirect
+require github.com/vibeus/hugo-common v0.0.0-20191227232903-1d24c4487f2c // indirect
