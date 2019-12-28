@@ -1,6 +1,6 @@
 ---
 title: "[dev] Whiteboarding 101: An Introduction for Marketers, Designers, and Innovators"
-slug: whiteboarding-101-an-introduction-for-marketers-designers-and-innovators
+slug: dev-whiteboarding-101-an-introduction-for-marketers-designers-and-innovators
 date: 2018-01-30
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 ---

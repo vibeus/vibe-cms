@@ -3,7 +3,7 @@
   <div class="hero-body">
     <div class="container has-text-white">
       <h1 class="title has-text-white">{{ .Title }}</h1>
-      {{ with .Resources.GetMatch "cover.{jpg,png}" }}
+      {{ with .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
       <figure class="image is-cover">
         <img src={{ .Permalink }} alt={{ .Name }} />
         <div class="overlay" />

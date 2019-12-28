@@ -1,6 +1,6 @@
 ---
 title: "[dev] Projects from Start to Finish with Vibe"
-slug: projects-from-start-to-finish-with-vibe
+slug: dev-projects-from-start-to-finish-with-vibe
 date: 2018-01-29
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 ---

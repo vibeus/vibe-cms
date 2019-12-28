@@ -1,6 +1,6 @@
 ---
 title: "[dev] Vibe’s Guide to InfoComm 2019"
-slug: vibes-guide-to-infocomm-2019
+slug: dev-vibes-guide-to-infocomm-2019
 date: 2018-01-25
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 ---

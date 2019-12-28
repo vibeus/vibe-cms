@@ -11,9 +11,10 @@
           <div class="card">
             <div class="card-image">
               <figure class="image">
-                {{ $cover := .Resources.GetMatch "cover.{jpg,png}" | resources.Fingerprint }}
+                {{ $cover := .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
                 {{ if $cover }}
-                <img src="{{ $cover.Permalink }}" alt="{{ $cover.Name }}">
+                {{ $src := $cover | resources.Fingerprint }}
+                <img src="{{ $src.Permalink }}" alt="{{ $src.Name }}">
                 {{ else }}
                 {{ $default := resources.Get "img/blog/default-cover.png" | resources.Fingerprint }}
                 <img src="{{ $default.Permalink }}" alt="{{ $default.Name }}">

@@ -4,3 +4,5 @@
 /resources
 /option
 /.idea
+/content/blog/*/
+!/content/blog/dev-post-*/
