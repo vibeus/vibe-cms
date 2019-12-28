@@ -4,9 +4,12 @@
   background: rgba(242, 242, 242, 0.3)
 
   .image.is-hero
-    width: 480px
-    height: 500px
+    max-width: 480px
+    max-height: 500px
     margin-left: auto
+
+    +mobile
+      margin: auto
 
   .hero-body
     padding-bottom: 0
