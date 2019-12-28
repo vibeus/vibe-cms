@@ -3,8 +3,8 @@ const path = require("path");
 const request = require("request");
 
 const AUTHENTICATION = process.env.VIBE_CMS_TOKEN;
-const MAINFILE = 'index.md';
 const MAINID = process.env.MAIN_ID;
+const MAINFILE = 'index.md';
 const CONFIGFOLDERNAME = 'option';
 
 const deleteFolder= (path) => {
@@ -51,10 +51,12 @@ const renameFolder = (str, fileName) => {
         newFileName=newFileName.replace(/[\r\n]/g,"");
 
         deleteFolder(path.join(__dirname, 'content', 'blog', newFileName));
-        fs.rename(path.join(__dirname, 'content', 'blog', fileName), path.join(__dirname, 'content', 'blog', newFileName),(error) => {
-            error ? console.log('Rename failed', error) : console.log('Rename ok');
-        });
+        fs.renameSync(path.join(__dirname, 'content', 'blog', fileName), path.join(__dirname, 'content', 'blog', newFileName));
+        return newFileName
+    } else {
+        return false
     }
+
 };
 
 const cutMdFile = (fileName) => {
@@ -64,7 +66,6 @@ const cutMdFile = (fileName) => {
             throw Error(err);
         }
         let str = data.toString();
-        const dirPath = path.join(__dirname, 'content', 'blog', fileName);
         let title = str.substring(0, str.indexOf('---'));
         title = title.replace('#', '');
         title = title.replace(/\ +/g,"");
@@ -76,27 +77,35 @@ const cutMdFile = (fileName) => {
         str = str.replace(/    date:/g, 'date:');
         str = str.replace(/    tags:/g, 'tags:');
         str = str.replace(/    draft:/g, 'draft:');
-        // \[\+.*?\]
         str =  str.replace(/slug:(.+?)\n/g,res=>{
             return  `title: ${title}` + '\n' + res
         });
         let i = 0;
-        str =  str.replace(/http[s]?:\/\/.+\.(jpg|jpeg|png)/g,res=>{
-            if(res.indexOf('.jpeg')) {
-                res.replace(/.jpeg/g, '.jpg');
-            }
+        const newName = renameFolder(str, fileName);
+        if (!newName) {
+            throw Error('No slug')
+        }
+
+        const newDirPath = path.join(__dirname, 'content', 'blog', newName);
+        const newFilePath = path.join(__dirname, 'content', 'blog', newName, 'index.md');
+        fs.writeFileSync(newFilePath, str);
+
+        str.replace(/http[s]?:\/\/.+\)/g,res=>{
             i++;
-            const imgName = (i === 1 ? 'cover' : i) + '.' + res.split('.').pop();
-            createFolder(dirPath, {url: res}, false, imgName);
-            return imgName
-        });
-        fs.writeFile(filePath, str,(err)=>{
-            if (err) {
-                throw Error(err);
-            }
-            renameFolder(str, fileName);
+            const imgUrl = res.replace(')', '');
+            const renameImg = (type, imgName) => {
+                str = str.replace(res, imgName + '.' + type + ')');
+                fs.writeFileSync(newFilePath, str)
+            };
+            createFolder(newDirPath, {url: imgUrl}, false, i, true, renameImg);
+            return res
         });
     });
+};
+
+const ifFirstImg = (param) => {
+    const file = fs.readdirSync(param);
+    return file.join("-").indexOf('cover') === -1;
 };
 
 const getAllFile = () => {
@@ -127,28 +136,35 @@ const getAllFile = () => {
     });
 };
 
-const createFolder = (dirPath, options, event, fileName) => {
+const createFolder = (dirPath, options, event, fileName, isImg, renameImg) => {
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath);
-        console.log("Folder created successfully");
-    } else {
-        console.log(`Folder already exists：${dirPath}`);
     }
 
-    const writeStream = fs.createWriteStream(path.join(dirPath, fileName || MAINFILE));
-    const readStream = request(options);
-    readStream.pipe(writeStream);
-    readStream.on('end', function() {
-        console.log('Download successful！');
+    const readStream = request(options, function (error, response) {
+        if (isImg && response.headers['content-type'].indexOf('image') !== -1) {
+            let imgType = response.headers['content-type'].split('/').pop();
+            if(imgType === 'jpeg') {
+                imgType = 'jpg'
+            }
+            const ifFirst = ifFirstImg(dirPath);
+            let imgName = (ifFirst ? 'cover' : fileName) + '.' + imgType;
+            renameImg(imgType, ifFirst ? 'cover' : fileName);
+
+            createFolder(dirPath, options, false, imgName)
+        }
     });
-    readStream.on('error', function(err) {
-        throw Error(err);
-    });
-    writeStream.on("finish", function() {
-        console.log("Write successfully！");
-        writeStream.end();
-        event && event()
-    });
+    if (!isImg) {
+        const writeStream = fs.createWriteStream(path.join(dirPath, fileName || MAINFILE));
+        readStream.pipe(writeStream);
+        readStream.on('error', function(err) {
+            throw Error(err);
+        });
+        writeStream.on("finish", function() {
+            writeStream.end();
+            event && event()
+        });
+    }
 };
 
 try{
