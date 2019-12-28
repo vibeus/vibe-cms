@@ -2,7 +2,7 @@
 <section class="hero is-blog-content">
   <div class="hero-body">
     <div class="container has-text-white">
-      <h1 class="title has-text-white">{{ .Title }}</h1>
+      <h1 class="title has-text-white is-vibe-heading">{{ .Title }}</h1>
       {{ with .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
       <figure class="image is-cover">
         <img src={{ .Permalink }} alt={{ .Name }} />
@@ -15,7 +15,7 @@
 
 <section class="section is-blog-content">
   <div class="container">
-    <div class="content">
+    <div class="content has-vibe-heading">
       {{ .Content }}
     </div>
   </div>
