@@ -3,6 +3,7 @@ title: "[dev] Vibe vs. Google Jamboard vs. Microsoft Surface Hub vs. Samsung Fli
 slug: dev-vibe-vs-google-jamboard-vs-microsoft-surface-hub-vs-samsung-flip-smartboard-comparison
 date: 2018-01-28
 expiryDate: 2018-01-01 # This makes post only show in dev environment
+author: Vibe Team
 ---
 
 ![](cover.jpg)

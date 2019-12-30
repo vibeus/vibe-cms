@@ -1,12 +1,32 @@
 {{ define "main" }}
-
-{{ partial "common/hero.html" . }}
+{{ with default (index .Pages.ByDate.Reverse 0) (index (where .Pages.ByDate.Reverse "Params.isfeatured" true) 0) }}
+<section class="hero is-blog-list is-hidden-mobile">
+  <div class="hero-body">
+    <div class="container is-flex">
+      <div class="columns is-desktop is-vcentered">
+        <div class="column is-half-desktop is-content">
+          <h1 class="title is-vibe-heading">{{ .Title }}</h1>
+          <p class="summary">{{ .Summary }}</p>
+          <div class="more has-margin-top-lg"><a href="{{ .URL }}">Read More &gt;</a></div>
+        </div>
+        {{ with .Resources.GetMatch "cover.{jpg,png,jpeg}" }}
+        <div class="column is-image">
+          <figure class="image is-hero">
+            <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
+          </figure>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
 
 <section class="section is-blog-list">
   <div class="container">
     <div class="columns is-multiline">
-      {{ range .Pages }}
-      <div class="column is-one-third">
+      {{ range .Pages.ByDate.Reverse }}
+      <div class="column is-half-tablet is-one-third-desktop">
         <a href="{{ .RelPermalink }}">
           <div class="card">
             <div class="card-image">

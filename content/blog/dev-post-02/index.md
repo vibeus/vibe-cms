@@ -3,6 +3,8 @@ title: "[dev] How to Build a Collaborative Workspace (And Why You Should)"
 slug: dev-how-to-build-a-collaborative-workspace-and-why-you-should
 date: 2018-01-29
 expiryDate: 2018-01-01 # This makes post only show in dev environment
+isfeatured: true
+author: Vibe Team
 ---
 
 ![](cover.jpg)

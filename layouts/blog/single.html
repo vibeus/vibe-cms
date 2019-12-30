@@ -3,11 +3,13 @@
   <div class="hero-body">
     <div class="container has-text-white">
       <div class="title has-text-white">
-        <div class="feature">Feature Post</div>
+        {{ if .Params.isFeatured }}
+        <div class="feature">Featured Post</div>
+        {{ end }}
         <div class="is-vibe-heading">{{ .Title }}</div>
         <div class="date">
-          <div>by <span> Matt Haughey</span></div>
-          <div> March 26,  2019</div>
+          <div>by <span>{{ .Params.author }}</span></div>
+          <div>{{ .Date.Format "January 2, 2006" }}</div>
         </div>
       </div>
       {{ with .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
