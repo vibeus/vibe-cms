@@ -68,7 +68,6 @@ const cutMdFile = (fileName) => {
         let str = data.toString();
         let title = str.substring(0, str.indexOf('---'));
         title = title.replace('#', '');
-        title = title.replace(/\ +/g,"");
         title = title.replace(/[\r\n]/g,"");
 
         str = str.substring(str.indexOf('---'), str.length);
@@ -76,11 +75,11 @@ const cutMdFile = (fileName) => {
         str = str.replace(/    slug:/g, 'slug:');
         str = str.replace(/    date:/g, 'date:');
         str = str.replace(/    tags:/g, 'tags:');
+        str = str.replace(/    author:/g, 'author:');
         str = str.replace(/    draft:/g, 'draft:');
         str =  str.replace(/slug:(.+?)\n/g,res=>{
-            return  `title: ${title}` + '\n' + res
+            return  `title: "${title}"` + '\n' + res
         });
-        let i = 0;
         const newName = renameFolder(str, fileName);
         if (!newName) {
             throw Error('No slug')
@@ -89,23 +88,18 @@ const cutMdFile = (fileName) => {
         const newDirPath = path.join(__dirname, 'content', 'blog', newName);
         const newFilePath = path.join(__dirname, 'content', 'blog', newName, 'index.md');
         fs.writeFileSync(newFilePath, str);
-
+        let arr = [];
         str.replace(/http[s]?:\/\/.+\)/g,res=>{
-            i++;
             const imgUrl = res.replace(')', '');
-            const renameImg = (type, imgName) => {
-                str = str.replace(res, imgName + '.' + type + ')');
-                fs.writeFileSync(newFilePath, str)
-            };
-            createFolder(newDirPath, {url: imgUrl}, false, i, true, renameImg);
+            arr.push(imgUrl);
             return res
         });
+        const renameImg = (type, imgName, res) => {
+            str = str.replace(res, imgName + '.' + type + ')');
+            fs.writeFileSync(newFilePath, str)
+        };
+        createFolder(newDirPath, {url: arr[0]}, false, 0, true, renameImg, arr);
     });
-};
-
-const ifFirstImg = (param) => {
-    const file = fs.readdirSync(param);
-    return file.join("-").indexOf('cover') === -1;
 };
 
 const getAllFile = () => {
@@ -136,20 +130,28 @@ const getAllFile = () => {
     });
 };
 
-const createFolder = (dirPath, options, event, fileName, isImg, renameImg) => {
+const ifFirstImg = (param) => {
+    const file = fs.readdirSync(param);
+    return file.join("-").indexOf('cover') === -1;
+};
+
+const createFolder = (dirPath, options, event, fileName, isImg, renameImg, arr) => {
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath);
     }
 
     const readStream = request(options, function (error, response) {
+        arr && arr[fileName + 1] && createFolder(dirPath, {url: arr[fileName + 1]}, false, fileName + 1, true, renameImg, arr);
         if (isImg && response.headers['content-type'].indexOf('image') !== -1) {
             let imgType = response.headers['content-type'].split('/').pop();
             if(imgType === 'jpeg') {
                 imgType = 'jpg'
             }
+
             const ifFirst = ifFirstImg(dirPath);
+            console.log(ifFirst, fileName);
             let imgName = (ifFirst ? 'cover' : fileName) + '.' + imgType;
-            renameImg(imgType, ifFirst ? 'cover' : fileName);
+            renameImg(imgType, ifFirst ? 'cover' : fileName, arr[fileName]);
 
             createFolder(dirPath, options, false, imgName)
         }

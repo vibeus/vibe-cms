@@ -2,7 +2,14 @@
 <section class="hero is-blog-content">
   <div class="hero-body">
     <div class="container has-text-white">
-      <h1 class="title has-text-white is-vibe-heading">{{ .Title }}</h1>
+      <div class="title has-text-white">
+        <div class="feature">Feature Post</div>
+        <div class="is-vibe-heading">{{ .Title }}</div>
+        <div class="date">
+          <div>by <span> Matt Haughey</span></div>
+          <div> March 26,  2019</div>
+        </div>
+      </div>
       {{ with .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
       <figure class="image is-cover">
         <img src={{ .Permalink }} alt={{ .Name }} />

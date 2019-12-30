@@ -3,21 +3,44 @@
 .hero.is-vibe-blog
   background: rgba(242, 242, 242, 0.3)
 
-  .image.is-hero
-    max-width: 480px
-    max-height: 500px
-    margin-left: auto
-
-    +mobile
-      margin: auto
-
   .hero-body
-    padding-bottom: 0
+    height: 800px
+    padding: 0
+    .container
+      height: 100%
+      display: flex
+      align-items: center
+      .columns
+        margin: 0
+        .column
+          padding: 0
+          .has-vibe-heading
+            font-size: 2.3rem
+            h1
+              font-size: 4.3rem
+              display: -webkit-box
+              -webkit-box-orient: vertical
+              -webkit-line-clamp: 3
+              overflow: hidden
+            p
+              font-size: 1.3rem
+              display: -webkit-box
+              -webkit-box-orient: vertical
+              -webkit-line-clamp: 3
+              overflow: hidden
+
 
 .section.is-blog-list
   .column
     padding: 1.25rem 1rem
-
+  .card
+    height: 100%
+    .card-content
+      padding: 1rem 1.5rem 1.5rem 1.5rem
+      .content
+        margin-bottom: 0.7rem
+      .more
+        font-size: 0.9rem
   .card-image
     width: 100%
     padding-top: 56.25% // keep .card-image 16:9 as place holder
@@ -32,7 +55,7 @@
         object-fit: cover
 
   .card, .card .image
-    transition: 0.2s
+    transition: 0.01s
 
   +tablet
     .card:not(:hover)
@@ -50,48 +73,61 @@
     -webkit-box-orient: vertical
     -webkit-line-clamp: 3
 
+  h2
+    font-size: 1.5rem
+    margin-bottom: 0.5rem
+
   .more
     font-weight: bold
     color: #463FF4
 
 .hero.is-blog-content
   background: #6E7EC1
+    height: 800px
   .hero-body
     display: flex
+    padding: 0
+    height: 800px
 
   .container
-    display: flex
-    flex: 1
+    max-width: 100rem
 
   .title
-    max-width: 60%
-    align-self: center
-    margin-bottom: 0
+    width: 1000px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 99
+    margin: 0
+    left: 0
+    .feature
+      margin-bottom: 2rem
+      color: rgba(255, 255, 255, 0.8)
+      line-height: 50px
+      font-size: 2rem
+    .is-vibe-heading
+      font-size: 5rem
+      line-height: 100px
+    .date
+      margin-top: 6.75rem
+      display: flex
+      flex-direction: row
+      color: rgba(255, 255, 255, 0.8)
+      font-size: 1.5rem
+      div
+        &:last-child
+          margin-left: 2rem
+      span
+        text-decoration: underline
 
   .image.is-cover
-    display: none
+    width: 900px
+    height: 750px
+    float: right
+    margin-top: 140px
 
-  +desktop
-    height: 500px
-
-    .title
-      position: relative
-      z-index: 1
-
-    .image.is-cover
-      display: block
-      width: 600px
-      height: 500px
-      position: absolute
-      right: 0
-
-      img
-        height: 100%
-        object-fit: cover
-
-      .overlay
-        +absolute-fill
-        background: rgba(0, 0, 0, 0.2)
+    img
+      height: 100%
 
 .section.is-blog-content
   .container
@@ -101,7 +137,21 @@
       img[src='cover.jpg'], img[src='cover.png']
         display: none
 
-      margin-top: 4rem
+      margin-top: 10rem
 
 .content a
   text-decoration: underline
+
+@media screen and (max-width: 1023px)
+    .section.is-blog-list
+      .container
+        .columns
+          display: grid
+          grid-template-columns: 50% 50%
+
+@media screen and (min-width: 1216px)
+  .section.is-blog-list
+    .container
+      max-width: 900px !important
+
+
