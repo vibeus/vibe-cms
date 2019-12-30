@@ -1,0 +1,27 @@
+{{ $portalId := "5698963" }}
+{{ $formId := "b27f948e-cde2-4a69-845e-8a7dc69a8134" }}
+
+<section class="section is-blog-subscribe">
+  <div class="container">
+    <h2 class="title is-1 is-vibe-heading has-text-centered">
+      Subscribe to our blog to get updates on all things Vibe
+    </h2>
+    <div class="subscribe-form">
+      <form id="subscribe-blog" action="https://forms.hubspot.com/uploads/form/v2/{{ $portalId }}/{{ $formId }}" method="POST">
+        <div class="field has-addons">
+          <div class="control is-email">
+            <input class="input is-medium" type="email" placeholder="Email" name="EMAIL" />
+          </div>
+          <div class="control is-submit">
+            <input type="submit" class="button is-medium is-info is-fullwidth" value="Subscribe" />
+          </div>
+        </div>
+      </form>
+      <div class="thank-you">
+        Thank you for subscribing Vibe's blog!
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "common/template-script" (dict "asset" "js/blog/subscribe.template.js" "domId" "subscribe-blog") }}
