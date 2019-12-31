@@ -40,11 +40,9 @@ function postLayout() {
 
       const left = document.createElement('div');
       left.classList.add('column');
-      left.classList.add('has-margin-right-lg');
 
       const right = document.createElement('div');
       right.classList.add('column');
-      right.classList.add('has-margin-left-lg');
 
       left.appendChild(imgP.cloneNode(true));
       right.appendChild(h1.cloneNode(true));
