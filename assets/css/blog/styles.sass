@@ -141,7 +141,7 @@
       height: 100%
 
 .section.is-blog-content
-  .container
+  > .container
     max-width: 680px
 
     +desktop
@@ -149,6 +149,19 @@
         display: none
 
       margin-top: 10rem
+
+  .section.is-head-image
+    width: 100vw
+    left: 50%
+    position: relative
+    background: #f2f2f2
+    margin-top: 3rem
+    margin-bottom: 3rem
+    margin-left: calc(-50vw)
+
+    .container
+      img
+        box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2)
 
 .section.is-blog-subscribe
   background: rgba(242, 242, 242, 0.3)

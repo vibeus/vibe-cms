@@ -19,6 +19,8 @@ To build a collaborative workspace for your organization, you need the right lay
 
 # What is a collaborative workspace?
 
+![](https://lh4.googleusercontent.com/gZ8GNCvqmwqyTYjPqSk-ReBNHw-6DMnXkAgQNJkKegZDl13VOBV839DVbFYbFaVlyq7XM3KPQ5d630YbhYWE7cLpnvKhfUaox_m2u9v251cY4MMqYhw6jWc8KBAq_3G5yOtIHWTE)
+
 Collaborative workspaces are defined by their best qualities — diversity, inclusivity, and empowerment — more than their physical arrangements.
 
 They operate on two levels: one physical and the other operational. The collaborative workspace allows an individual the privacy and quiet needed to get work done, plus social spaces for working together, ideating, and more.
@@ -33,8 +35,6 @@ Collaborative workspaces take influence from freelancing practices by offering a
 - Lounge areas with sofas, outdoor patios, and other informal spaces for community life
 
 Some settings will serve multiple uses. An office bar — complete with craft beer taps or espresso makers — can be a casual meeting space, a quiet workstation, or a social area depending on the time of day.
-
-![](https://lh4.googleusercontent.com/gZ8GNCvqmwqyTYjPqSk-ReBNHw-6DMnXkAgQNJkKegZDl13VOBV839DVbFYbFaVlyq7XM3KPQ5d630YbhYWE7cLpnvKhfUaox_m2u9v251cY4MMqYhw6jWc8KBAq_3G5yOtIHWTE)
 
 # Why Develop Collaborative Workspaces?
 
