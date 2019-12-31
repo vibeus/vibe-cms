@@ -1,6 +1,8 @@
 {{ define "main" }}
+{{ $heroSlug := "" }}
 {{ with default (index .Pages.ByDate.Reverse 0) (index (where .Pages.ByDate.Reverse "Params.isfeatured" true) 0) }}
-<section class="hero is-blog-list is-hidden-mobile">
+{{ $heroSlug = .Slug }}
+<section class="hero is-blog-list">
   <div class="hero-body">
     <div class="container is-flex">
       <div class="columns is-desktop is-vcentered">
@@ -25,7 +27,7 @@
 <section class="section is-blog-list">
   <div class="container">
     <div class="columns is-multiline">
-      {{ range .Pages.ByDate.Reverse }}
+      {{ range (where .Pages.ByDate.Reverse "Slug" "!=" $heroSlug) }}
       <div class="column is-half-tablet is-one-third-desktop">
         <a href="{{ .RelPermalink }}">
           <div class="card">
