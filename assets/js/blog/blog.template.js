@@ -17,7 +17,7 @@ function setupForm() {
 }
 
 function postLayout() {
-  const imgs = document.querySelectorAll('h1+p>img');
+  const imgs = document.querySelectorAll('h1+p>img,h2+p>img');
   imgs.forEach(img => {
     const imgP = img.parentElement;
     const h1 = imgP.previousElementSibling;
