@@ -8,8 +8,12 @@
       <div class="columns is-desktop is-vcentered">
         <div class="column is-half-desktop is-content">
           <h1 class="title is-vibe-heading">{{ .Title }}</h1>
-          <p class="summary">{{ .Summary }}</p>
-          <div class="more has-margin-top-lg"><a href="{{ .URL }}">Read More &gt;</a></div>
+          <p class="summary">
+            <a href="{{ .URL }}">
+              {{ .Summary }}
+            </a>
+          </p>
+<!--          <div class="more has-margin-top-lg"><a href="{{ .URL }}">[Read More]</a></div>-->
         </div>
         {{ with .Resources.GetMatch "cover.{jpg,png,jpeg}" }}
         <div class="column is-image">
@@ -50,7 +54,8 @@
                 {{ .Summary | plainify | safeHTML }}
                 </p>
               </div>
-              <div class="more">Read More &gt;</div>
+              {{ $default := resources.Get "img/blog/arrow.png" | resources.Fingerprint }}
+              <div class="more">Read More &nbsp; <img src="{{ $default.Permalink }}" alt="{{ $default.Name }}"></div>
             </div>
           </div>
         </a>

@@ -2,7 +2,9 @@
 
 .hero.is-blog-list
   background: rgba(242, 242, 242, 0.3)
-
+  .hero-body
+    .is-image
+      opacity: 0.8
   +desktop
     height: 800px
 
@@ -16,7 +18,8 @@
           height: 100%
         .image img
           object-fit: cover
-
+  .is-content
+    margin-top: -2.5rem
   .title
     font-size: 3.75rem
     display: -webkit-box
@@ -28,28 +31,38 @@
 
   .summary
     font-size: 1.375rem
+    color: #505F71
     display: -webkit-box
     -webkit-box-orient: vertical
     -webkit-line-clamp: 3
     overflow: hidden
+    margin-top: 2rem
+    a
+      color: #505F71
+      line-height: 30px
+      &:hover
+        color: #333
+        text-decoration: underline
 
   .more a
-    font-weight: bold
-    color: #463FF4
+    color: #d9d8db
 
 .section.is-blog-list
+  padding-bottom: 7.5rem
+  padding-top: 5rem
+
   +desktop
     .container
-      max-width: 900px
+      max-width: 1240px
 
   .column
     padding: 1.25rem 1rem
   .card
     height: 100%
     .card-content
-      padding: 1rem 1.5rem 1.5rem 1.5rem
+      padding: 1.5rem
       .content
-        margin-bottom: 0.7rem
+        margin-bottom: 0.8rem
       .more
         font-size: 0.9rem
   .card-image
@@ -85,16 +98,23 @@
     -webkit-line-clamp: 3
 
   h2
-    font-size: 1.5rem
+    font-size: 1.375rem
+    line-height: 1.5rem
     margin-bottom: 0.5rem
+    -webkit-line-clamp: 2
+
+  p
+    line-height: 1.6rem
 
   .more
     font-weight: bold
     color: #463FF4
+    align-items: center
+    display: flex
 
 .hero.is-blog-content
   background: #6E7EC1
-    height: 800px
+  height: 800px
   .hero-body
     display: flex
     padding: 0
@@ -104,7 +124,7 @@
     max-width: 100rem
 
   .title
-    width: 1000px
+    width: 50rem
     position: absolute
     top: 50%
     transform: translateY(-50%)
@@ -115,16 +135,16 @@
       margin-bottom: 2rem
       color: rgba(255, 255, 255, 0.8)
       line-height: 50px
-      font-size: 2rem
+      font-size: 1.8rem
     .is-vibe-heading
-      font-size: 5rem
-      line-height: 100px
+      font-size: 3rem
+      line-height: 4rem
     .date
-      margin-top: 6.75rem
+      margin-top: 5rem
       display: flex
       flex-direction: row
       color: rgba(255, 255, 255, 0.8)
-      font-size: 1.5rem
+      font-size: 1.3rem
       div
         &:last-child
           margin-left: 2rem
@@ -139,6 +159,7 @@
 
     img
       height: 100%
+      opacity: 0.8
 
 .section.is-blog-content
   > .container
@@ -151,6 +172,7 @@
       margin-top: 10rem
 
   .section.is-head-image
+    padding: 5rem 1.5rem
     width: 100vw
     left: 50%
     position: relative
@@ -165,13 +187,31 @@
 
 .section.is-blog-subscribe
   background: rgba(242, 242, 242, 0.3)
-  padding-top: 6rem
-  padding-bottom: 6rem
+  height: 29rem
+  display: flex
+  align-items: center
   .container
-    max-width: 840px
+    max-width: 35rem
+    +mobile
+      max-width: 80%
+    .title
+      line-height: 50px
+      margin-bottom: 4rem
   .thank-you
     display: none
     text-align: center
+  .subscribe-form
+    height: 64px
+
+    input
+      height: 64px
+      font-size: 1.3rem
+      &:hover
+        &::-webkit-input-placeholder
+          color: #333
+        &::-ms-input-placeholder
+          color: #333
+
   .subscribe-form.is-submitted
     form
       display: none
@@ -180,9 +220,10 @@
   .field
     justify-content: center
   .control
-    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08)
     &.is-email
       width: 380px
+      margin: 0
       .input
         border-color: transparent
         box-shadow: none
@@ -191,3 +232,9 @@
 
 .content a
   text-decoration: underline
+
+
+@media screen and (max-width: 480px)
+  .section.is-blog-subscribe
+    .container
+      max-width: 100%
