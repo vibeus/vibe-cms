@@ -2,7 +2,6 @@
 /node_modules
 /public
 /resources
-/option
 /.idea
 /content/blog/*/
 !/content/blog/dev-post-*/

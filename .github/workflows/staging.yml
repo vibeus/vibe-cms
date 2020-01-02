@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - jiulongw/test-deploy
 jobs:
   build:
     name: Deploy
@@ -12,6 +13,9 @@ jobs:
       uses: actions/setup-go@v1
       with:
         go-version: 1.12
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
     - uses: actions/checkout@v1
       with:
         lfs: true
@@ -34,8 +38,14 @@ jobs:
         rm -f $HUGO_ZIP
     - name: Yarn install
       run: yarn install
+    - name: Sync blogs
+      env:
+        VIBE_CMS_TOKEN: ${{ secrets.VIBE_CMS_TOKEN }}
+      run: |
+        pip3 install requests
+        python3 scripts/sync-blogs.py
     - name: Hugo build
-      run: hugo -e staging --minify --buildExpired # build expired (dev blogs) before paper -> md script is ready
+      run: hugo -e staging --minify
     - name: Hugo deploy
       env:
         AWS_DEFAULT_REGION: us-west-2

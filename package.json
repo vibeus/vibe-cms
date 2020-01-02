@@ -1,11 +1,5 @@
 {
-  "scripts": {
-    "get-files": "node getFiles.js"
-  },
   "devDependencies": {
     "bulma": "^0.8.0"
-  },
-  "dependencies": {
-    "request": "^2.88.0"
   }
 }
