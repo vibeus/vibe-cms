@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      - jiulongw/test-deploy
+      - live
 jobs:
   build:
     name: Deploy
@@ -44,11 +44,21 @@ jobs:
       run: |
         pip3 install requests
         python3 scripts/sync-blogs.py
-    - name: Hugo build
-      run: hugo -e staging --minify
-    - name: Hugo deploy
+    - name: Hugo build and deploy staging
+      if: github.ref == 'refs/heads/master'
       env:
         AWS_DEFAULT_REGION: us-west-2
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: hugo deploy --target aws-staging --invalidateCDN
+      run: |
+        hugo -e staging --minify
+        hugo deploy --target aws-staging --invalidateCDN
+    - name: Hugo build and deploy production
+      if: github.ref == 'refs/heads/live'
+      env:
+        AWS_DEFAULT_REGION: us-west-2
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        hugo -e production --minify
+        hugo deploy --target aws-production --invalidateCDN
