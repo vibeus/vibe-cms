@@ -78,16 +78,17 @@ def get_image_file_ext(content_type):
     else:
         raise RuntimeError('Unsupported image content type: {}'.format(content_type))
 
-# Download images discovered in content, and replace with local names.
+# Download images discovered in content, and replace with hugo shortcode local names.
 def download_images(content, directory):
     lines = []
     images = {}
     index = 0
 
     for line in content.splitlines():
-        for match in re.finditer('!\[.*?\]\((.+?)\)', line):
+        for match in re.finditer('!\[(.*?)\]\((.+?)\)', line):
             if match:
-                url = match.group(1)
+                caption = match.group(1)
+                url = match.group(2)
                 if not url in images:
                     resp = requests.get(url)
                     ext = get_image_file_ext(resp.headers['Content-Type'])
@@ -102,7 +103,7 @@ def download_images(content, directory):
                         f.write(resp.content)
 
                 filename = images[url]
-                line = line.replace(url, filename)
+                line = line.replace(match.group(0), '{{{{< common/srcset "{}" "{}" >}}}}'.format(filename, caption))
 
         # cover image (index 0) must be the first image before any content.
         # if first non-empty content is not image, skip cover, it is a data issue.
@@ -113,12 +114,16 @@ def download_images(content, directory):
 
     return '\n'.join(lines)
 
-def process_doc(doc_id):
+def process_doc(doc_id, is_dev):
     content = get_doc(doc_id)
 
     title = get_line_value(content, '^# (.+)$')
     slug = get_line_value(content, '^    slug: (.+)$')
     fm, body = extract_front_matter(content)
+
+    if is_dev:
+        slug = 'dev-' + slug
+        fm = fm.replace('slug: ', 'slug: dev-')
 
     md_path = os.path.join(git_root, 'content', 'blog', slug, 'index.md')
     os.makedirs(os.path.dirname(md_path), exist_ok=True)
@@ -139,6 +144,7 @@ def main():
     parser = argparse.ArgumentParser(description='Sync blog posts from Dropbox Paper.')
     parser.add_argument('--manifest', default='WKMNtdiJgFiILnlQJcLLG', help='The blog list doc.')
     parser.add_argument('--token', help='Dropbox access token')
+    parser.add_argument('--dev', action='store_true', help='download as dev post')
     args = parser.parse_args()
 
     if args.token:
@@ -154,7 +160,7 @@ def main():
         doc_id = doc[0]
         doc_name = doc[1]
         print('Processing doc {}: {}'.format(doc_id, doc_name))
-        process_doc(doc_id)
+        process_doc(doc_id, args.dev)
         count += 1
 
     print('Successfully processed {} documents.'.format(count))

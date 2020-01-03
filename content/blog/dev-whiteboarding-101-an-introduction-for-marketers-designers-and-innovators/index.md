@@ -1,12 +1,15 @@
 ---
-title: "[dev] Whiteboarding 101: An Introduction for Marketers, Designers, and Innovators"
+title: "Whiteboarding 101: An Introduction for Marketers, Designers, and Innovators"
 slug: dev-whiteboarding-101-an-introduction-for-marketers-designers-and-innovators
-date: 2018-01-30
-expiryDate: 2018-01-01 # This makes post only show in dev environment
 author: Vibe Team
+date: 2019-12-03
+isfeatured: true
+tags: ["Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration"]
+draft: false
+titleNeedBackground: true
 ---
+{{< common/srcset "cover.png" "" >}}
 
-![](cover.jpg)
 
 The whiteboard has been a popular medium for problem solving since its early introduction to the workplace in the 90s. So popular, in fact, that whole modes of collaboration have sprung up around it.
 
@@ -20,6 +23,9 @@ Whiteboarding is used throughout the workplace to solve problems, visualize idea
 At the most basic level, it’s using a whiteboard to organize and document ideas. This can involve a literal whiteboard hung on the wall or a freestanding easel with a pad of paper. The modern solution is a digital whiteboard that can take notes, translate handwriting into legible text, auto-save your sessions, and more (i.e. the [Vibe Board](https://vibe.us/)).
 
 However, there’s so much more to whiteboarding than just writing notes. It can refer to anything from collaboration in classrooms to conducting sales presentations to displaying skills on the spot for a job interview.
+
+{{< common/srcset "image-1.jpg" "" >}}
+
 
 The whiteboard is a source of inspiration as much as it is a place for tracking it. A whiteboard can serve as the organizational locus for a brainstorming session or the place where the abstract threads and visions swirling in your imagination take shape and come to life.
 
@@ -36,6 +42,10 @@ For your account managers and customer-facing teams, whiteboards can lead to mor
 ## Visualizing complex problems
 
 Using verbal communication to describe complex systems or define workflows isn’t ideal for every setting. In many instances, a simple diagram can make a concept easier to grasp. Using graphic representations of abstractions can give people the concrete foothold they need to develop a firm understanding. For [UX designers](https://uxdesign.cc/practical-whiteboarding-for-ux-designers-2329d6e7d254), this visual brainstorming component is indispensable.
+
+
+{{< common/srcset "image-2.png" "UX design presentation on VIbe Smartboard" >}}
+
 
 
 ## Boosting internal productivity
@@ -56,6 +66,10 @@ One organizational practice that facilitators love: divide the white board into 
 Another valuable way to keep everyone on track is to set up a “[parking lot](https://officeninjas.com/6-tips-for-rocking-a-whiteboard-in-your-next-meeting/)” on your whiteboard. This space is where valuable ideas that are outside the scope of the current session can wait for later discussion. That way, people feel like they are being heard — and their ideas don’t get lost in the mix — while everyone stays focused and on task.
 
 
+{{< common/srcset "image-3.png" "Boards saved in Vibe for further work" >}}
+
+
+
 ## Handwriting isn’t legible
 
 When people can’t read what you write on the whiteboard, the power of the exercise is lost.
@@ -64,6 +78,9 @@ This can present a problem — what if the best facilitator you have can’t wri
 Often, bad handwriting is the result of poor spacing. Whiteboards can quickly get filled up with ideas and diagrams, which limits the amount of space available for new ideas. With Vibe, you don’t have to worry about this. Pinch and zoom to create more [endless space on the canvas](https://vibe.us/product/), or start an entirely new board and share with your team without losing any work.
 
 When you’re working on a Vibe board, your ideation isn’t confined by physical limitations. Think outside the frame!
+
+
+{{< common/srcset "image-4.png" "" >}}
 
 # 5 Key Tips:
 
@@ -93,5 +110,11 @@ Use whiteboarding as a way to promote inclusivity. Whiteboarding can break down 
 ## Have Some Fun
 
 There’s more to whiteboarding than just work, work, work. Whiteboards tend to become hubs for inside jokes, workplace graffiti, even games. All these can be part of a productive day, and creative facilitators can even use this joyful approach to whiteboarding in guiding their ideation.
-With whiteboarding, the sky’s the limit when it comes to creativity. Have fun with it!
+With whiteboarding, the sky’s the limit when it comes to creativity. 
+
+Have fun with it!
+
+{{< common/srcset "image-5.png" "Collaboration lives here!" >}}
+
+
 Start thinking about your next great idea. [See what Vibe can do for you](https://vibe.us/product/).

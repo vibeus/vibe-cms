@@ -1,12 +1,14 @@
 ---
-title: "[dev] Vibe’s Guide to InfoComm 2019"
+title: "Vibe’s Guide to InfoComm 2019"
 slug: dev-vibes-guide-to-infocomm-2019
-date: 2018-01-25
-expiryDate: 2018-01-01 # This makes post only show in dev environment
 author: Vibe Team
+date: 2019-06-11
+isfeatured: false
+tags: ["Infocomm"]
+draft: false
 ---
+{{< common/srcset "cover.png" "" >}}
 
-![](cover.png)
 
 [InfoComm](https://www.infocommshow.org/) is the largest audio-visual and integrated experience event in North America. Each year, more than 1,000 exhibitors congregate at InfoComm to showcase thousands of new products for nearly 44,000 attendees from 110 countries. This year’s event is being held from June 8th to the 14th in sunny Orlando, FL.
 
@@ -26,6 +28,8 @@ This marks Vibe’s first appearance at the event as well. [Come visit us at Boo
 
 See how Vibe works in person. [Schedule an exclusive demo at Infocomm.](https://vibe.us/contact/)
 
+
+{{< common/srcset "image-1.png" "" >}}
 
 # Education
 
@@ -61,6 +65,11 @@ In addition, there will be a Women’s Council breakfast on Thursday morning tha
 
 Millions flock to Orlando every year for a reason. Orlando is one of the country’s great tourist destinations, from [Disneyworld](https://disneyworld.disney.go.com/) to its off-the-beaten-path [restaurant scene](https://www.zagat.com/l/top-food-in-orlando) (who wants to try some gator?) We might even take a little break from the excitement of InfoComm to [commune with some manatees](https://www.getyourguide.com/orlando-l191/orlando-manatee-encounter-t51118/) out on the open water.
 
+
+{{< common/srcset "image-2.png" "" >}}
+
+
 So, in short, we’re excited for InfoComm. Are you?
 
 Keep up with us at InfoComm 2019 by following Vibe on [Twitter](https://twitter.com/thevibeboard).
+

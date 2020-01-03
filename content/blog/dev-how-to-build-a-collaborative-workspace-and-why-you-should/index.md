@@ -1,13 +1,14 @@
 ---
-title: "[dev] How to Build a Collaborative Workspace (And Why You Should)"
+title: "How to Build a Collaborative Workspace (And Why You Should)"
 slug: dev-how-to-build-a-collaborative-workspace-and-why-you-should
-date: 2018-01-29
-expiryDate: 2018-01-01 # This makes post only show in dev environment
-isfeatured: true
 author: Vibe Team
+date: 2019-03-25
+tags: ["Coworking", "Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration"]
+draft: false
+titleNeedBackground: true
 ---
+{{< common/srcset "cover.png" "" >}}
 
-![](cover.jpg)
 
 The workforce is more diverse and distributed than ever, and this new paradigm needs a new style of workspace to thrive. A lot of companies are experimenting with ways to create new spaces for their teams to operate in that are optimized to support outside the box thinking.
 
@@ -18,8 +19,6 @@ They also appear to work as intended — according to [McKinsey and Company]
 To build a collaborative workspace for your organization, you need the right layout, the right collaborative tools, and the right mindset. Are you ready to make the shift?
 
 # What is a collaborative workspace?
-
-![](https://lh4.googleusercontent.com/gZ8GNCvqmwqyTYjPqSk-ReBNHw-6DMnXkAgQNJkKegZDl13VOBV839DVbFYbFaVlyq7XM3KPQ5d630YbhYWE7cLpnvKhfUaox_m2u9v251cY4MMqYhw6jWc8KBAq_3G5yOtIHWTE)
 
 Collaborative workspaces are defined by their best qualities — diversity, inclusivity, and empowerment — more than their physical arrangements.
 
@@ -35,6 +34,8 @@ Collaborative workspaces take influence from freelancing practices by offering a
 - Lounge areas with sofas, outdoor patios, and other informal spaces for community life
 
 Some settings will serve multiple uses. An office bar — complete with craft beer taps or espresso makers — can be a casual meeting space, a quiet workstation, or a social area depending on the time of day.
+
+{{< common/srcset "image-1.png" "group discussion in front of Vibe board" >}}
 
 # Why Develop Collaborative Workspaces?
 
@@ -57,7 +58,7 @@ When meeting in-person, a digital whiteboard lets teams organize ideation sessio
 
 The [Vibe digital whiteboard](https://order.vibe.us/) even includes integrations to welcome remote workers to collaborative sessions from anywhere. All your notes are automatically saved to the Vibe cloud, where they can be quickly shared or revisited.
 
-![](https://lh6.googleusercontent.com/jrRkPEFP-3kEyisRRejN_KMJuJJQloIC4RuyfcEvdhXsPdA-ho5ALkupDZ511EvDuC2X5RT1a77-njsBeBYo6nZ_6lGprKSCs0FTWKyvyDWAYyFD2VU_bl51_sAqAXZbko3hhYcf)
+{{< common/srcset "image-2.png" "video conferencing for remote collaboration" >}}
 
 
 
@@ -71,22 +72,23 @@ Collaborative spaces now need to include technology to connect in-house staff wi
 
 
 # What does a collaborative workspace look like?
-## Here are a few of our favorite examples:
+
+Here are a few of our favorite examples:
 
 
-![](https://lh6.googleusercontent.com/PFBHg3LnEzmwxvgUE_AXQk_fqpcrhhQneLAFWM6HVNdDvsO6sm-sjjEZe8Q1-pFX8v9CMrhStSNqJC-NRt-UB6YNGQeywJSfzMSdsIwM0VS2jt8Dp_zMp__lFuytsoTy_4hClPrh)
+{{< common/srcset "image-3.jpg" "" >}}
 
 
 Spotify provides a variety of different spaces throughout their office to curate feel for their employees. Many of these spaces are more like those you’d find in a university library or hip cafe than a classic corporate office.
 
 
-![](https://lh5.googleusercontent.com/F0DQORoo7GlxJS2Oewj8ZqCRGy1Tta38gqhAQfRI0xWBs4YbwQuxUKh1MEFDUDn2kR6nt7MJP8QBbzkK1xIkw7C6_PL9gKmKE0WdeagE8rmV6Xp2rHdeAdxHvNRTRYQQMWPz73rm)
+{{< common/srcset "image-4.jpg" "" >}}
 
 
 Slack’s San Francisco HQ features a “forest floor” to introduce the calmness of the natural environment to the collaborative experience.
 
 
-![](https://lh5.googleusercontent.com/x7CwVIKuGOQvq4oFRYDPVt1tgoMeZu-ZyTF-GpZ5Xlgtk0UVEdGMpYQ4Ke_UWLWtVvL1OeH4Kn-lgoSpv9YV910-wZ5zQpUlIqstJLHLvI3lvLKgqTkd3l2k09yJiWS0XyC4Y3oU)
+{{< common/srcset "image-5.png" "" >}}
 
 
 Google’s second location on LA’s westside is housed in the old Spruce Goose hangar. They refit this massive open space with a variety of smaller collaborative nooks to give it context and proportion, creating “spaces that are moldable and flexible,” according to Google spokesperson Katherine Will.

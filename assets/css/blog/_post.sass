@@ -69,12 +69,12 @@
   > .container
     max-width: px-to-rem(694)
 
-    img[src='cover.jpg'], img[src='cover.png']
+    .content > img:first-child
       margin-top: -5rem
 
     +desktop
       margin-top: 8rem
-      img[src='cover.jpg'], img[src='cover.png']
+      .content > img:first-child
         display: none
 
   .section.is-head-image

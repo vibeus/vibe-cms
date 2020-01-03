@@ -9,7 +9,9 @@
           {{ if .Params.isFeatured }}
           <div class="featured-post">Featured Post</div>
           {{ end }}
+
           <div class="title is-vibe-heading{{ if .Params.titleNeedBackground }} has-background{{ end }}">
+            {{ if .Draft }}[DRAFT]{{ end }}
             {{ .Title }}
             {{ if .Params.titleNeedBackground }}
             <div class="title-background"
@@ -28,8 +30,7 @@
 
       {{ with .Resources.GetMatch "cover.{jpg,png}" }}
       <figure class="image is-cover">
-        <img src={{ .Permalink }} alt={{ .Name }} />
-        <div class="overlay"></div>
+        {{ partial "common/srcset" (dict "resource" . "desktop" "1680x" "tablet" "840x" "options" "jpg") }}
       </figure>
       {{ end }}
     </div>

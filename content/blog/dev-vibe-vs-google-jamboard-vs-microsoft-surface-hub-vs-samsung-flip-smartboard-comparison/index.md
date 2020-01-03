@@ -1,14 +1,16 @@
 ---
-title: "[dev] Vibe vs. Google Jamboard vs. Microsoft Surface Hub vs. Samsung Flip: Smartboard Comparison"
+title: "Vibe vs. Google Jamboard vs. Microsoft Surface Hub vs. Samsung Flip: Smartboard Comparison"
 slug: dev-vibe-vs-google-jamboard-vs-microsoft-surface-hub-vs-samsung-flip-smartboard-comparison
-date: 2018-01-28
-expiryDate: 2018-01-01 # This makes post only show in dev environment
 author: Vibe Team
-heroBackColor: "#463ff4"
+date: 2019-04-29
+tags: ["Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration", "Remote Collaboration"]
+draft: false
 titleNeedBackground: true
 ---
 
-![](cover.jpg)
+
+{{< common/srcset "cover.png" "" >}}
+
 
 Digital whiteboards, or smartboards, were invented to bring the tried-and-true dry erase whiteboard into the digital age.
 
@@ -60,7 +62,7 @@ Vibe is also a powerful multitasker that seamlessly shifts from app to app. Comp
 One of the big selling points? The price. At $2,999.00, Vibe is almost half the price of the Google Jamboard and one third of the price of Surface Hub.
 
 
-![](https://cdn-images-1.medium.com/max/800/1*FKjwzMTItAuBM1V7tvXWJw.png)
+{{< common/srcset "image-1.png" "" >}}
 
 
 Vibe comparison chart to Microsoft Surface Hub, Google Jamboard, & the Samsung Flip.
@@ -74,4 +76,4 @@ One less obvious advantage Vibe has over its competitors is it’s small product
 
 “Overall, we’ve been very impressed by Vibe and the team behind it,” says Vibe user Peter Parker, Director of Advanced Analytics at Attunix. “They’ve been super receptive to our feedback and have incorporated suggestions and requests, both big and small, into the product. We’re often finding new ways of integrating Vibe into our everyday work to make us all more productive and efficient.”
 
-**Ready to think outside the rectangle?** [**Request a Vibe demo**](https://vibe.us/interactive-smartboard/)**.**
+**Ready to think outside the rectangle?** [**Request a Vibe demo**](https://landing.vibe.us/request-demo)**.**
