@@ -1,0 +1,86 @@
+.hero.is-blog-list
+  background: #FBFBFB
+
+  .columns
+    align-items: stretch
+
+  .column.blog-hero-copy
+    +desktop
+      width: 53.6%
+
+    .title
+      +clamp-lines(3)
+
+    .summary
+      font-size: 18px
+      line-height: 30px
+      color: #505F71
+      +clamp-lines(3)
+      a
+        color: #505F71
+        &:hover
+          color: #333
+          text-decoration: underline
+
+  // make image bottom aligned with hero-body by eating up 3rem padding of hero-body.
+  .column.is-image
+    +desktop
+      margin-bottom: -3rem
+      display: flex
+      align-items: flex-end
+
+.section.is-blog-list
+  padding-bottom: 7.5rem
+  padding-top: 5rem
+
+  +desktop
+    .container
+      max-width: 422px * 3
+
+  .column
+    padding: 1.25rem 1rem
+
+  .card
+    height: 100%
+    .card-content
+      padding: 1rem
+      .content
+        margin-bottom: 0.8rem
+        h2
+          +clamp-lines(2)
+          font-size: px-to-rem(22)
+          line-height: px-to-rem(24)
+          margin-bottom: 0.5rem
+        p.summary
+          +clamp-lines(3)
+          line-height: px-to-rem(26)
+      .more
+        font-size: px-to-rem(14)
+        font-weight: bold
+        color: $link-hover
+
+  .card-image
+    width: 100%
+    padding-top: 56.25% // keep .card-image 16:9 as place holder
+    overflow: hidden
+
+    .image
+      +absolute-fill
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+  .card, .card .image
+    transition: 0.06s
+
+  +tablet
+    .card:not(:hover)
+      box-shadow: rgba(10, 10, 10, 0.0) 0px 8px
+
+      .image
+        left: 1rem
+        top: 1rem
+        right: 1rem
+

@@ -1,28 +1,42 @@
 {{ define "main" }}
-<section class="hero is-blog-content">
+<section class="hero is-blog-post"
+         {{ with .Params.heroBackColor }}style="background-color:{{ . }}"{{ end }}>
   <div class="hero-body">
-    <div class="container has-text-white">
-      <div class="title has-text-white">
-        {{ if .Params.isFeatured }}
-        <div class="feature">Featured Post</div>
-        {{ end }}
-        <div class="is-vibe-heading">{{ .Title }}</div>
-        <div class="date">
-          <div>by <span>{{ .Params.author }}</span></div>
-          <div>{{ .Date.Format "January 2, 2006" }}</div>
+    <div class="container">
+      <div class="blog-hero-copy">
+        <div class="before-copy"></div>
+        <div class="copy-content">
+          {{ if .Params.isFeatured }}
+          <div class="featured-post">Featured Post</div>
+          {{ end }}
+          <div class="title is-vibe-heading{{ if .Params.titleNeedBackground }} has-background{{ end }}">
+            {{ .Title }}
+            {{ if .Params.titleNeedBackground }}
+            <div class="title-background"
+                 {{ with .Params.heroBackColor }}style="background-color:{{ . }}"{{ end }}>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        <div class="after-copy">
+          <div class="post-metadata">
+            <div class="author">by <strong>{{ .Params.author }}</strong></div>
+            <div class="publish-date">{{ .Date.Format "January 2, 2006" }}</div>
+          </div>
         </div>
       </div>
-      {{ with .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
+
+      {{ with .Resources.GetMatch "cover.{jpg,png}" }}
       <figure class="image is-cover">
         <img src={{ .Permalink }} alt={{ .Name }} />
-        <div class="overlay" />
+        <div class="overlay"></div>
       </figure>
       {{ end }}
     </div>
   </div>
 </section>
 
-<section class="section is-blog-content">
+<section class="section is-blog-post">
   <div class="container">
     <div class="content has-vibe-heading">
       {{ .Content }}

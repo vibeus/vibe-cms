@@ -1,0 +1,107 @@
+.hero.is-blog-post
+  background: #6E7EC1
+  color: #ffffff
+
+  .container
+    display: flex
+
+  .blog-hero-copy
+    +desktop
+      width: 37%
+      .after-copy
+        display: flex
+        align-items: flex-end
+
+  .featured-post
+    font-size: px-to-rem(20)
+    margin-bottom: 1.5rem
+
+  .title
+    color: #ffffff
+    .title-background
+      display: none
+
+    +desktop
+      width: 720px
+      position: relative
+      z-index: 1
+
+      .title-background
+        display: block
+        z-index: -1
+        position: absolute
+        left: 0
+        bottom: 0
+        top: 0
+        width: 100vw
+        background: #6E7EC1
+        opacity: 0.36
+
+  .post-metadata
+    font-size: px-to-rem(18)
+    display: flex
+    strong
+      color: #ffffff
+    .author
+      margin-right: 2rem
+    +desktop
+      margin-bottom: 40px
+
+  .image
+    display: none
+    flex: 1
+    margin-top: px-to-rem(90) - 3rem
+    margin-bottom: px-to-rem(-60) - 3rem
+    box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
+
+    img
+      height: 100%
+      object-fit: cover
+
+    +desktop
+      display: block
+
+    @media screen and (min-width: 1600px)
+      margin-left: 40px
+      margin-right: -40px
+
+.section.is-blog-post
+  > .container
+    max-width: px-to-rem(694)
+
+    img[src='cover.jpg'], img[src='cover.png']
+      margin-top: -5rem
+
+    +desktop
+      margin-top: 8rem
+      img[src='cover.jpg'], img[src='cover.png']
+        display: none
+
+  .section.is-head-image
+    padding: 5rem 1.5rem
+    width: 100vw
+    left: 50%
+    position: relative
+    background: #f2f2f2
+    margin-top: 3rem
+    margin-bottom: 3rem
+    margin-left: calc(-50vw)
+
+    .container
+      img
+        box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2)
+    .column
+      &:first-child
+        margin-right: 2rem
+      &:last-child
+        margin-left: 2rem
+  .content
+    font-size: px-to-rem(18)
+    line-height: px-to-rem(30)
+
+    a
+      text-decoration: underline
+    h1
+      font-size: px-to-rem(40)
+    h2
+      font-size: px-to-rem(28)

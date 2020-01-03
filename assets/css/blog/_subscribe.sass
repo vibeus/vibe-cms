@@ -1,0 +1,47 @@
+.section.is-blog-subscribe
+  background: rgba(242, 242, 242, 0.3)
+  height: 29rem
+  display: flex
+  align-items: center
+  .container
+    max-width: 35rem
+    @media screen and (max-width: 480px)
+      max-width: 100%
+
+    +mobile
+      max-width: 80%
+    .title
+      line-height: 50px
+      margin-bottom: 4rem
+  .thank-you
+    display: none
+    text-align: center
+  .subscribe-form
+    height: 64px
+
+    input
+      height: 64px
+      font-size: 1.3rem
+      &:hover
+        &::-webkit-input-placeholder
+          color: #333
+        &::-ms-input-placeholder
+          color: #333
+
+  .subscribe-form.is-submitted
+    form
+      display: none
+    .thank-you
+      display: inherit
+  .field
+    justify-content: center
+  .control
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08)
+    &.is-email
+      width: 380px
+      margin: 0
+      .input
+        border-color: transparent
+        box-shadow: none
+    &.is-submit
+      width: 180px
