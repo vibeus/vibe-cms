@@ -6,6 +6,8 @@ date: 2019-06-11
 isfeatured: false
 tags: ["Infocomm"]
 draft: false
+expiryDate: 2018-01-01 # This makes post only show in dev environment
+
 ---
 {{< common/srcset "cover.png" "" >}}
 

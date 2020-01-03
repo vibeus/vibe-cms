@@ -134,6 +134,8 @@ def process_doc(doc_id, is_dev):
         f.write('---\n')
         f.write('title: "{}"\n'.format(title.replace('"', '\"')))
         f.write(fm)
+        if is_dev:
+            f.write('\nexpiryDate: 2018-01-01 # This makes post only show in dev environment\n')
         f.write('\n---\n')
 
         f.write(body)

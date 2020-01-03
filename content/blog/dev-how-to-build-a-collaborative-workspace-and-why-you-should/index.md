@@ -6,6 +6,8 @@ date: 2019-03-25
 tags: ["Coworking", "Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration"]
 draft: false
 titleNeedBackground: true
+expiryDate: 2018-01-01 # This makes post only show in dev environment
+
 ---
 {{< common/srcset "cover.png" "" >}}
 
