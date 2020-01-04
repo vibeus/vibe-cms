@@ -63,7 +63,12 @@
                 {{ .Summary | plainify | safeHTML }}
                 </p>
               </div>
-              <div class="more"><span>Read More</span><span class="icon is-small"><i class="mdi mdi-chevron-right"></i></span></div>
+              <div class="more">
+                <span>Read More</span>
+                <span class="icon">
+                  {{ partial "common/mdi" "chevron-right" }}
+                </span>
+              </div>
             </div>
           </div>
         </a>
