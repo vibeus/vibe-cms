@@ -62,3 +62,24 @@ jobs:
       run: |
         hugo -e production --minify
         hugo deploy --target aws-production --invalidateCDN
+    - uses: actions/github-script@0.3.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.repos.createDeploymentStatus({
+            owner: 'vibeus',
+            repo: '${{ github.event.repository.name }}',
+            deployment_id: '${{ github.event.deployment.id }}',
+            state: 'success',
+          })
+    - uses: actions/github-script@0.3.0
+      if: failure() || cancelled()
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.repos.createDeploymentStatus({
+            owner: 'vibeus',
+            repo: '${{ github.event.repository.name }}',
+            deployment_id: '${{ github.event.deployment.id }}',
+            state: 'failure',
+          })
