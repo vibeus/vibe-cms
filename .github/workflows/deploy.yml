@@ -63,6 +63,7 @@ jobs:
         hugo -e production --minify
         hugo deploy --target aws-production --invalidateCDN
     - uses: actions/github-script@0.3.0
+      if: github.event_name == 'deployment'
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
@@ -73,7 +74,7 @@ jobs:
             state: 'success',
           })
     - uses: actions/github-script@0.3.0
-      if: failure() || cancelled()
+      if: github.event_name == 'deployment' && (failure() || cancelled())
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
