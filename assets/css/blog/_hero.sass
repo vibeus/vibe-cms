@@ -24,7 +24,21 @@
   font-size: px-to-rem(45)
   margin-bottom: 1rem
   +widescreen
-    font-size: px-to-rem(60)
+    font-size: px-to-rem(58)
     margin-bottom: 2rem
   +mobile
     font-size: px-to-rem(34)
+
+// 24 is padding of hero-body
+$hero-padding-left: 120px - 24px
+$hero-padding-right: 80px - 24px
+
+.hero.is-blog-list .container,
+.hero.is-blog-post .container
+  max-width: 1200px
+  +widescreen-only
+    padding-left: calc(#{$hero-padding-left} - (100vw - 1200px) / 2)
+    padding-right: calc(#{$hero-padding-right} - (100vw - 1200px) / 2)
+  +desktop-only
+    padding-left: $hero-padding-left
+    padding-right: $hero-padding-right

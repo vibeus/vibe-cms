@@ -16,32 +16,34 @@
   .thank-you
     display: none
     text-align: center
+
   .subscribe-form
-    height: 64px
+    .field
+      justify-content: center
+
+    .control
+      box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08)
+      border-radius: 6px
+      &.is-email
+        width: 380px
+        margin: 0
+        .input
+          border-color: transparent
+          box-shadow: none
+          padding-left: 1.5rem
+          &:hover
+            +placeholder
+              color: #333
+
+      &.is-submit
+        width: 180px
 
     input
       height: 64px
-      font-size: 1.3rem
-      &:hover
-        &::-webkit-input-placeholder
-          color: #333
-        &::-ms-input-placeholder
-          color: #333
+      font-size: px-to-rem(18)
 
   .subscribe-form.is-submitted
     form
       display: none
     .thank-you
       display: inherit
-  .field
-    justify-content: center
-  .control
-    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08)
-    &.is-email
-      width: 380px
-      margin: 0
-      .input
-        border-color: transparent
-        box-shadow: none
-    &.is-submit
-      width: 180px

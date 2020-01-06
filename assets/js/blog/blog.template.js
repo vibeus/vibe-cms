@@ -28,7 +28,7 @@ function postLayout() {
     if (imgP && h1 && summaryP) {
       const section = document.createElement('div');
       section.classList.add('section');
-      section.classList.add('is-hidden-mobile');
+      section.classList.add('is-hidden-touch');
       section.classList.add('is-head-image');
 
       const container = document.createElement('div');
@@ -54,9 +54,9 @@ function postLayout() {
 
       h1.parentElement.insertBefore(section, h1);
 
-      h1.classList.add('is-hidden-tablet');
-      imgP.classList.add('is-hidden-tablet');
-      summaryP.classList.add('is-hidden-tablet');
+      h1.classList.add('is-hidden-desktop');
+      imgP.classList.add('is-hidden-desktop');
+      summaryP.classList.add('is-hidden-desktop');
     }
   });
 }
