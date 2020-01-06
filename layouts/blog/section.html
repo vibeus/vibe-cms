@@ -24,7 +24,7 @@
         {{ with .Resources.GetMatch "cover.{jpg,png}" }}
         <div class="column is-image">
           <figure class="image is-hero">
-            <img src="{{ .RelPermalink }}" alt="{{ .Name }}" />
+            {{ partial "common/srcset" (dict "resource" . "desktop" "1200x" "tablet" "1024x" "options" "jpg") }}
           </figure>
         </div>
         {{ end }}
@@ -45,8 +45,7 @@
               <figure class="image">
                 {{ $cover := .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
                 {{ if $cover }}
-                {{ $src := $cover | resources.Fingerprint }}
-                <img src="{{ $src.Permalink }}" alt="{{ $src.Name }}">
+                {{ partial "common/srcset" (dict "resource" $cover "desktop" "800x" "tablet" "600x" "options" "jpg") }}
                 {{ else }}
                 {{ $default := resources.Get "img/blog/default-cover.png" | resources.Fingerprint }}
                 <img src="{{ $default.Permalink }}" alt="{{ $default.Name }}">
