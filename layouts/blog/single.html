@@ -10,14 +10,9 @@
           <div class="featured-post">Featured Post</div>
           {{ end }}
 
-          <div class="title is-vibe-heading{{ if .Params.titleNeedBackground }} has-background{{ end }}">
+          <div class="title is-vibe-heading">
             {{ if .Draft }}[DRAFT]{{ end }}
             {{ .Title }}
-            {{ if .Params.titleNeedBackground }}
-            <div class="title-background"
-                 {{ with .Params.heroBackColor }}style="background-color:{{ . }}"{{ end }}>
-            </div>
-            {{ end }}
           </div>
         </div>
         <div class="after-copy">
@@ -31,6 +26,9 @@
       {{ with .Resources.GetMatch "cover.{jpg,png}" }}
       <figure class="image is-cover">
         {{ partial "common/srcset" (dict "resource" . "desktop" "1680x" "tablet" "840x" "options" "jpg") }}
+        {{ with $.Params.blogHeroMask }}
+        <div class="blog-hero-mask" style="background-color: rgba(0,0,0,{{ . }})"></div>
+        {{ end }}
       </figure>
       {{ end }}
     </div>

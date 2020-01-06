@@ -5,6 +5,7 @@ author: Vibe Team
 date: 2019-07-22
 tags: ["Vibe Smartboard"]
 draft: true
+blogHeroMask: 0.2
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
