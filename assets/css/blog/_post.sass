@@ -2,9 +2,6 @@
   background: #6E7EC1
   color: #ffffff
 
-  .container
-    display: flex
-
   .blog-hero-copy
     +desktop
       width: 45%
@@ -50,8 +47,8 @@
   .image
     display: none
     flex: 1
-    margin-top: px-to-rem(90) - 3rem
-    margin-bottom: px-to-rem(-60) - 3rem
+    margin-top: px-to-rem(90)
+    margin-bottom: px-to-rem(-60)
     box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
 
     img
@@ -86,8 +83,8 @@
     left: 50%
     position: relative
     background: #f2f2f2
-    margin-top: 3rem
-    margin-bottom: 3rem
+    margin-top: 80px
+    margin-bottom: 80px
     margin-left: calc(-50vw)
 
     .container
@@ -111,6 +108,8 @@
     h2
       margin-bottom: px-to-rem(24)
       font-size: px-to-rem(28)
+    p + p
+      margin-top: 40px
 
     > h1
       margin-top: px-to-rem(80)

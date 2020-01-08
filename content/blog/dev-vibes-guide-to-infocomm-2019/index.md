@@ -33,6 +33,8 @@ See how Vibe works in person. [Schedule an exclusive demo at Infocomm.](https://
 
 {{< common/srcset "image-1.png" "" >}}
 
+
+
 # Education
 
 Each day at InfoComm presents an opportunity to engage with dozens of educational seminars from innovators and industry leaders. Here are a few that we’re pretty excited about:

@@ -7,11 +7,9 @@
 // The reason that CSS :before and :after is not used here is that in some case, we need to
 // put stuff in top or bottom padding elements.
 .blog-hero-copy
-  +desktop
+  +tablet
     display: flex
     flex-direction: column
-    margin-top: -3rem  // eat 3rem padding-top of .hero-body
-    margin-bottom: -3rem //eat 3rem padding-bottom of .hero-body
     > .before-copy
       flex: 2
       min-height: 4rem
@@ -19,26 +17,40 @@
       flex: 3
       min-height: 6rem
 
-.hero.is-blog-list .title,
-.hero.is-blog-post .title
-  font-size: px-to-rem(45)
-  margin-bottom: 1rem
-  +widescreen
-    font-size: px-to-rem(58)
-    margin-bottom: 2rem
-  +mobile
-    font-size: px-to-rem(34)
+.hero.is-blog-list
+  overflow: hidden
 
-// 24 is padding of hero-body
-$hero-padding-left: 120px - 24px
-$hero-padding-right: 80px - 24px
+.hero.is-blog-list,
+.hero.is-blog-post
+  .hero-body
+    display: flex
+    +tablet
+      padding: 0
+  .container
+    display: flex
+    +mobile
+      display: block
+      > *:first-child
+        margin-bottom: 2rem
+  .title
+    font-size: px-to-rem(40)
+    margin-bottom: 1rem
+    +widescreen
+      font-size: px-to-rem(58)
+      margin-bottom: 2rem
+    +mobile
+      font-size: px-to-rem(34)
 
-.hero.is-blog-list .container,
-.hero.is-blog-post .container
-  max-width: 1200px
-  +widescreen-only
-    padding-left: calc(#{$hero-padding-left} - (100vw - 1200px) / 2)
-    padding-right: calc(#{$hero-padding-right} - (100vw - 1200px) / 2)
-  +desktop-only
-    padding-left: $hero-padding-left
-    padding-right: $hero-padding-right
+.hero.is-blog-list
+  .container
+    +desktop
+      +padded-container(1200px, 120px, 60px)
+    +tablet-only
+      +padded-container(784px, 80px, 0)
+
+.hero.is-blog-post
+  .container
+    +desktop
+      +padded-container(1200px, 120px, 120px)
+    +tablet-only
+      +padded-container(784px, 80px, 80px)

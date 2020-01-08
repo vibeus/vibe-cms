@@ -3,6 +3,7 @@ title: "How to Build a Collaborative Workspace (And Why You Should)"
 slug: dev-how-to-build-a-collaborative-workspace-and-why-you-should
 author: Vibe Team
 date: 2019-03-25
+isfeatured: false
 tags: ["Coworking", "Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration"]
 draft: false
 blogHeroMask: 0.2

@@ -1,4 +1,15 @@
 @import "_common.sass"
+
+=padded-container($max-width, $padding-left, $padding-right)
+  max-width: $max-width
+
+  padding-left: $padding-left
+  padding-right: $padding-right
+
+  @media screen and (min-width: $max-width + $padding-left + $padding-right)
+    padding-left: calc(#{$padding-left} - (100vw - #{$max-width}) / 2)
+    padding-right: calc(#{$padding-right} - (100vw - #{$max-width}) / 2)
+
 @import "_hero.sass"
 @import "_list.sass"
 @import "_post.sass"

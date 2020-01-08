@@ -5,6 +5,8 @@ import sys
 import os
 import json
 import re
+from PIL import Image
+from io import BytesIO
 
 if sys.version_info.major < 3 or sys.version_info.minor < 7:
     print('Python 3.7+ is required.')
@@ -64,12 +66,6 @@ def extract_front_matter(content):
 
     return '\n'.join(fm), '\n'.join(body)
 
-def get_image_file_basename(index):
-    if index == 0:
-        return 'cover'
-    else:
-        return 'image-{}'.format(index)
-
 def get_image_file_ext(content_type):
     if content_type == 'image/png':
         return '.png'
@@ -83,16 +79,25 @@ def download_images(content, directory):
     lines = []
     images = {}
     index = 0
+    has_content = False
 
     for line in content.splitlines():
+        any_match = False
         for match in re.finditer('!\[(.*?)\]\((.+?)\)', line):
+            any_match = True
             if match:
                 caption = match.group(1)
                 url = match.group(2)
                 if not url in images:
                     resp = requests.get(url)
                     ext = get_image_file_ext(resp.headers['Content-Type'])
-                    basename = get_image_file_basename(index)
+                    basename = 'image-{}'.format(index) if has_content else 'cover'
+                    if basename == 'cover':
+                        with Image.open(BytesIO(resp.content)) as img:
+                            width, height = img.size
+                            if width / height > 1.95:
+                                basename = 'cover-fullwidth'
+
                     fn = basename + ext
                     images[url] = fn
                     index += 1
@@ -102,13 +107,14 @@ def download_images(content, directory):
                     with open(os.path.join(directory, fn), 'wb') as f:
                         f.write(resp.content)
 
-                filename = images[url]
-                line = line.replace(match.group(0), '{{{{< common/srcset "{}" "{}" >}}}}'.format(filename, caption))
+                if basename != 'cover-fullwidth':
+                    filename = images[url]
+                    line = line.replace(match.group(0), '{{{{< common/srcset "{}" "{}" >}}}}'.format(filename, caption))
+                else:
+                    line = ""
 
-        # cover image (index 0) must be the first image before any content.
-        # if first non-empty content is not image, skip cover, it is a data issue.
-        if line.strip() and index == 0:
-            index += 1
+        if not any_match and line.strip():
+            has_content = True
 
         lines.append(line)
 
@@ -139,6 +145,8 @@ def process_doc(doc_id, is_dev):
         f.write('\n---\n')
 
         f.write(body)
+        if not body.endswith('\n'):
+            f.write('\n')
 
 def main():
     global access_token

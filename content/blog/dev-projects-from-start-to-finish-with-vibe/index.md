@@ -3,8 +3,9 @@ title: "Projects from Start to Finish with Vibe"
 slug: dev-projects-from-start-to-finish-with-vibe
 author: Vibe Team
 date: 2019-07-22
+isfeatured: false
 tags: ["Vibe Smartboard"]
-draft: true
+draft: false
 blogHeroMask: 0.2
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 

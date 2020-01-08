@@ -5,11 +5,8 @@
   align-items: center
   .container
     max-width: 35rem
-    @media screen and (max-width: 480px)
-      max-width: 100%
-
     +mobile
-      max-width: 80%
+      max-width: 100%
     .title
       line-height: 50px
       margin-bottom: 4rem
@@ -41,6 +38,9 @@
     input
       height: 64px
       font-size: px-to-rem(18)
+
+      +mobile
+        height: 48px
 
   .subscribe-form.is-submitted
     form

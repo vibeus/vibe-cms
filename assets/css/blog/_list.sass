@@ -1,12 +1,43 @@
 .hero.is-blog-list
   background: #FBFBFB
+  position: relative
+  min-height: 560px
+  +widescreen
+    min-height: 670px
 
-  .columns
-    align-items: stretch
+  &.has-fullwidth-background
+    min-height: 670px
 
-  .column.blog-hero-copy
-    +desktop
-      width: 53.6%
+  .hero-background
+    +absolute-fill
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+    .hero-bg-blur
+      min-width: 740px
+      width: 55%
+      background: rgba(255, 255, 255, 0.7)
+      filter: blur(160px)
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+
+  .blog-hero-copy
+    width: 31.25vw
+    min-width: 320px
+    margin-right: 2rem
+
+    +widescreen
+      width: 53.3333333%
+      margin-right: auto
+
+    +mobile
+      width: auto
+      min-width: auto
+      margin-right: auto
 
     .title
       +clamp-lines(3)
@@ -24,24 +55,41 @@
         color: #333
         text-decoration: underline
 
-  // make image bottom aligned with hero-body by eating up 3rem padding of hero-body.
-  .column.is-image
-    +desktop
-      margin-bottom: -3rem
+  .blog-hero-image
+    flex: 1
+
+    .image
+      +tablet
+        min-width: 500px
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+      @media screen and (min-width: 1440px) and (max-width: 1920px)
+        margin-right: calc(120px - (100vw - 1200px) / 2)
+      @media screen and (min-width: 1920px)
+        margin-right: -240px
+
+    +tablet
       display: flex
-      align-items: flex-end
+      align-items: stretch
 
 .section.is-blog-list
   padding-bottom: 7.5rem
   padding-top: 5rem
 
-  +desktop
-    .container
-      max-width: 422px * 3
+  .container
+    +desktop
+      min-width: 320px * 3
+    +tablet-only
+      max-width: 320px * 2 - 12px
 
-  .column
-    padding: 0
-    margin: 32px 0
+  +tablet
+    .column
+      padding: 0
+      margin: 32px 0
 
   .card
     height: 100%
@@ -64,6 +112,8 @@
         font-weight: bold
         color: $link-hover
         fill: $link-hover
+        .icon
+          margin-left: -0.25rem
 
   .card-image
     width: 100%
