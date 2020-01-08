@@ -42,7 +42,7 @@ jobs:
       env:
         VIBE_CMS_TOKEN: ${{ secrets.VIBE_CMS_TOKEN }}
       run: |
-        pip3 install requests
+        pip3 install requests Pillow
         python3 scripts/sync-blogs.py
     - name: Hugo build and deploy staging
       if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'deployment' && github.event.deployment.environment == 'staging')
