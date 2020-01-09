@@ -28,21 +28,40 @@
       padding: 0
   .container
     display: flex
+  .title
+    margin-bottom: 1rem
+    +widescreen
+      margin-bottom: 2rem
+
+.hero.is-blog-list
+  .title
+    font-size: px-to-rem(45)
+    line-height: px-to-rem(55)
+    +widescreen
+      font-size: px-to-rem(58)
+      line-height: px-to-rem(70)
+    +mobile
+      font-size: px-to-rem(40)
+      line-height: px-to-rem(50)
+
+.hero.is-blog-post
+  .title
+    font-size: px-to-rem(50)
+    line-height: px-to-rem(60)
+    +widescreen
+      font-size: px-to-rem(60)
+      line-height: px-to-rem(75)
+    +mobile
+      font-size: px-to-rem(40)
+      line-height: px-to-rem(50)
+
+.hero.is-blog-list
+  .container
     +mobile
       display: block
       > *:first-child
         margin-bottom: 2rem
-  .title
-    font-size: px-to-rem(40)
-    margin-bottom: 1rem
-    +widescreen
-      font-size: px-to-rem(58)
-      margin-bottom: 2rem
-    +mobile
-      font-size: px-to-rem(34)
 
-.hero.is-blog-list
-  .container
     +desktop
       +padded-container(1200px, 120px, 60px)
     +tablet-only
@@ -51,6 +70,6 @@
 .hero.is-blog-post
   .container
     +desktop
-      +padded-container(1200px, 120px, 120px)
+      +padded-container(1280px, 120px, 120px)
     +tablet-only
       +padded-container(784px, 80px, 80px)

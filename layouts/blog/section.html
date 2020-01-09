@@ -28,7 +28,7 @@
         <div class="after-copy"></div>
       </div>
       <div class="blog-hero-image">
-        {{ with default $fullwidthHero (.Resources.GetMatch "cover.{jpg,png}") }}
+        {{ with default (.Resources.GetMatch "cover.{jpg,png}") $fullwidthHero }}
           <figure class="image is-hero{{ if $fullwidthHero }} is-hidden-tablet{{ end }}">
             {{ partial "common/srcset" (dict "resource" . "desktop" "1200x" "tablet" "1024x" "options" "jpg") }}
           </figure>

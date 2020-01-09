@@ -81,21 +81,33 @@
 
   .container
     +desktop
-      min-width: 320px * 3
+      // -24px because .columns has -12px margin on both sides.
+      max-width: 422px * 3 - 24px
     +tablet-only
-      max-width: 320px * 2 - 12px
+      // -24px because .section has 1.5rem horizontal padding.
+      // +12px because .columns has -12px margin on both sides.
+      padding-left: 64px - 24px + 12px
+      padding-right: 64px - 24px + 12px
 
-  +tablet
-    .column
-      padding: 0
-      margin: 32px 0
+  .column
+    padding: 0
+    // in mobile, when there is only one column, 28px vertical margin will collapse, vertical space between cards is 28px.
+    // in tablet or above, when there is more than one column, margin collapse is disabled (only work for adjacent siblings,
+    // vertical space between cards is 28px * 2 = 56px.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+    margin: 28px 0
 
   .card
     height: 100%
     box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.05)
     z-index: 1
     .card-content
-      padding: 1.5rem
+      padding: 20px
+      +mobile
+        padding: 24px
+      +widescreen
+        padding: 32px
+
       .content
         margin-bottom: 0.5rem
         h2
@@ -106,13 +118,17 @@
         p.summary
           +clamp-lines(3)
           line-height: px-to-rem(26)
+          +mobile
+            line-height: px-to-rem(24)
       .more
         display: flex
         align-items: center
         font-size: px-to-rem(14)
-        font-weight: bold
+        line-height: 24px
         color: $link-hover
         fill: $link-hover
+        span
+          font-weight: 500
         .icon
           margin-left: -0.25rem
 
@@ -138,7 +154,15 @@
       z-index: 0
 
       .image
-        left: 1.5rem
-        top: 1.5rem
-        right: 1.5rem
+        left: 20px
+        top: 20px
+        right: 20px
+        +mobile
+          left: 24px
+          top: 24px
+          right: 24px
+        +widescreen
+          left: 32px
+          top: 32px
+          right: 32px
 

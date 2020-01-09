@@ -1,29 +1,39 @@
 .section.is-blog-subscribe
-  background: rgba(242, 242, 242, 0.3)
-  height: 29rem
-  display: flex
-  align-items: center
+  background: #FBFBFB
+  padding: px-to-rem(80) 1.5rem
+  +widescreen
+    padding: px-to-rem(120) 1.5rem
+  +mobile
+    padding: px-to-rem(60) 1.5rem
+
   .container
-    max-width: 35rem
-    +mobile
-      max-width: 100%
+    max-width: 560px
+    +tablet-only
+      max-width: 370px
+    +desktop-only
+      max-width: 380px
+
     .title
+      text-align: center
       line-height: 50px
       margin-bottom: 4rem
+      font-size: px-to-rem(22)
+      line-height: 2rem
+      +widescreen
+        font-size: 2rem
+        line-height: px-to-rem(50)
+
   .thank-you
     display: none
     text-align: center
 
   .subscribe-form
-    .field
-      justify-content: center
-
     .control
       box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08)
       border-radius: 6px
+
       &.is-email
-        width: 380px
-        margin: 0
+        flex: 1
         .input
           border-color: transparent
           box-shadow: none
@@ -33,14 +43,20 @@
               color: #333
 
       &.is-submit
-        width: 180px
+        width: 104px
+        +mobile
+          width: 96px
+        +widescreen
+          width: 180px
 
     input
-      height: 64px
-      font-size: px-to-rem(18)
+      height: 48px
+      font-size: px-to-rem(14)
 
-      +mobile
-        height: 48px
+      +widescreen
+        height: 64px
+        font-size: px-to-rem(18)
+
 
   .subscribe-form.is-submitted
     form
