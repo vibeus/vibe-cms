@@ -59,38 +59,53 @@
       +absolute-fill
 
 .section.is-blog-post
+  padding-top: 120px
+  padding-bottom: 120px
+
   > .container
     max-width: px-to-rem(694)
 
-    .content > p:first-child img
-      margin-top: -5rem
-      box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
-      margin-bottom: 5rem
-
-    +desktop
-      margin-top: 8rem
-      .content > p:first-child img
-        display: none
-
-  .section.is-head-image
-    padding: 120px
+  .heading-image
+    background: #FBFBFB
+    padding-bottom: 80px
+    position: relative
     width: 100vw
     left: 50%
-    position: relative
-    background: #FBFBFB
-    margin-top: 80px
-    margin-bottom: 80px
     margin-left: calc(-50vw)
+    margin-bottom: 80px
 
-    .container
-      img
-        box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2)
-    .column
-      padding: 0
-      &:first-child
-        margin-right: 40px
-      &:last-child
-        margin-left: 40px
+
+    +touch
+      padding-left: 1.5rem
+      padding-right: 1.5rem
+      margin-top: 80px + 40px
+
+      h1
+        margin-top: px-to-rem(80)
+      h2
+        margin-top: px-to-rem(64)
+      .container
+        max-width: px-to-rem(694)
+      .columns
+        margin: 0
+      .column
+        padding: 0
+        img
+          margin-top: -40px
+
+    +desktop
+      padding: 120px
+      margin-top: 80px
+
+      .container
+        img
+          box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2)
+      .column
+        padding: 0
+        &:first-child
+          margin-right: 40px
+        &:last-child
+          margin-left: 40px
 
   .content
     font-size: px-to-rem(18)
@@ -99,18 +114,28 @@
       text-decoration: underline
     h1
       margin-bottom: px-to-rem(64)
-      font-size: px-to-rem(32)
+      font-size: px-to-rem(40)
+      +mobile
+        font-size: px-to-rem(32)
       line-height: px-to-rem(45)
     h2
       margin-bottom: px-to-rem(24)
-      font-size: px-to-rem(24)
+      font-size: px-to-rem(28)
+      +mobile
+        font-size: px-to-rem(24)
       line-height: px-to-rem(32)
-    p + p
-      margin-top: 40px
-    strong
-      font-weight: 500
-
+    > p:not(:last-child)
+      margin-bottom: 40px
+    > p:first-child
+      margin-top: -120px - 40px
+      margin-bottom: 120px
+      img
+        box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
+      +desktop
+        display: none
     > h1
       margin-top: px-to-rem(80)
     > h2
       margin-top: px-to-rem(64)
+    strong
+      font-weight: 500

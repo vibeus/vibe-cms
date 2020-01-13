@@ -23,19 +23,16 @@ function postLayout() {
     const h1 = imgP.previousElementSibling;
     const summaryP = imgP.nextElementSibling;
 
-    console.log(h1);
-
     if (imgP && h1 && summaryP) {
       const section = document.createElement('div');
-      section.classList.add('section');
-      section.classList.add('is-hidden-touch');
-      section.classList.add('is-head-image');
+      section.classList.add('heading-image');
 
       const container = document.createElement('div');
       container.classList.add('container');
 
       const columns = document.createElement('div');
       columns.classList.add('columns');
+      columns.classList.add('is-desktop');
       columns.classList.add('is-vcentered');
 
       const left = document.createElement('div');
@@ -54,9 +51,9 @@ function postLayout() {
 
       h1.parentElement.insertBefore(section, h1);
 
-      h1.classList.add('is-hidden-desktop');
-      imgP.classList.add('is-hidden-desktop');
-      summaryP.classList.add('is-hidden-desktop');
+      h1.remove();
+      imgP.remove();
+      summaryP.remove();
     }
   });
 }
