@@ -79,6 +79,7 @@ def download_images(content, directory):
     lines = []
     images = {}
     index = 0
+    has_cover = False
     has_content = False
 
     for line in content.splitlines():
@@ -98,20 +99,30 @@ def download_images(content, directory):
                             if width / height > 1.95:
                                 basename = 'cover-fullwidth'
 
+                    # only accept one cover image per blog post.
+                    if basename == 'cover' and has_cover:
+                        print('  WARNING: ignored additional cover image: {}'.format(url))
+                        line = ''
+                        continue
+
                     fn = basename + ext
                     images[url] = fn
                     index += 1
 
-                    print('  Downloaded image {} as {}'.format(url, os.path.join(directory, fn)))
-
                     with open(os.path.join(directory, fn), 'wb') as f:
                         f.write(resp.content)
 
-                if basename != 'cover-fullwidth':
+                    print('  Downloaded image {} as {}'.format(url, os.path.join(directory, fn)))
+
+                # do not put cover-fullwidth into md file
+                if basename == 'cover-fullwidth':
+                    line = ''
+                else:
                     filename = images[url]
                     line = line.replace(match.group(0), '{{{{< common/srcset "{}" "{}" >}}}}'.format(filename, caption))
-                else:
-                    line = ""
+
+                    if basename == 'cover':
+                        has_cover = True
 
         if not any_match and line.strip():
             has_content = True
