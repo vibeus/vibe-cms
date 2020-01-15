@@ -24,12 +24,14 @@
       </div>
 
       {{ with .Resources.GetMatch "cover.{jpg,png}" }}
-      <figure class="image is-cover">
-        {{ partial "common/srcset" (dict "resource" . "desktop" "1680x" "tablet" "840x" "options" "jpg") }}
-        {{ with $.Params.blogHeroMask }}
-        <div class="blog-hero-mask" style="background-color: rgba(0,0,0,{{ . }})"></div>
-        {{ end }}
-      </figure>
+      <div class="blog-hero-image">
+        <figure class="image is-cover">
+          {{ partial "common/srcset" (dict "resource" . "desktop" "1680x" "tablet" "840x" "options" "jpg") }}
+          {{ with $.Params.blogHeroMask }}
+          <div class="blog-hero-mask" style="background-color: rgba(0,0,0,{{ . }})"></div>
+          {{ end }}
+        </figure>
+      </div>
       {{ end }}
     </div>
   </div>

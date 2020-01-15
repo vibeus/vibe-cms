@@ -32,14 +32,15 @@ function postLayout() {
 
       const columns = document.createElement('div');
       columns.classList.add('columns');
-      columns.classList.add('is-desktop');
       columns.classList.add('is-vcentered');
 
       const left = document.createElement('div');
       left.classList.add('column');
+      left.classList.add('is-left');
 
       const right = document.createElement('div');
       right.classList.add('column');
+      right.classList.add('is-right');
 
       left.appendChild(imgP.cloneNode(true));
       right.appendChild(h1.cloneNode(true));
