@@ -150,9 +150,10 @@
       line-height: px-to-rem(32)
     p
       span.caption
+        display: block
         font-size: 1rem
-        // img must be inline (otherwise negative margin-top will pull heading-image up) so use line-height to control margin to image.
-        line-height: px-to-rem(30 + 24)
+        line-height: px-to-rem(30)
+        margin-top: 20px
         color: #bdbdbd
     > p:not(:last-child)
       margin-bottom: 40px
