@@ -17,7 +17,7 @@
         <div class="copy-content">
           <h1 class="title is-vibe-heading">
             {{ if .Draft }}[DRAFT]{{ end }}
-            {{ .Title }}
+            {{ replace (replaceRE "([^~])~([^~])" "$1<br/>$2" .Title) "~~" "~" | safeHTML }}
           </h1>
           <p class="summary">
           {{ .Summary }}
@@ -59,7 +59,7 @@
               <div class="content has-vibe-heading">
                 <h2>
                   {{ if .Draft }}[DRAFT]{{ end }}
-                  {{ .Title }}
+                  {{ replace (replaceRE "([^~])~([^~])" "$1 $2" .Title) "~~" "~" | safeHTML }}
                 </h2>
                 <p class="summary">
                 {{ .Summary | plainify | safeHTML }}

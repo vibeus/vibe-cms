@@ -12,7 +12,7 @@
 
           <div class="title is-vibe-heading">
             {{ if .Draft }}[DRAFT]{{ end }}
-            {{ .Title }}
+            {{ replace (replaceRE "([^~])~([^~])" "$1<br/>$2" .Title) "~~" "~" | safeHTML }}
           </div>
         </div>
         <div class="after-copy">
