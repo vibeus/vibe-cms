@@ -1,6 +1,6 @@
 .hero.is-blog-post
-  background: #6E7EC1
-  color: #ffffff
+  background: white
+  border-bottom: 1px solid #E0E0E0
 
   +mobile
     .hero-body
@@ -9,6 +9,7 @@
   .blog-hero-copy
     +desktop
       width: 45.3125%
+      padding-right: 30px
 
     .after-copy
       display: flex
@@ -18,21 +19,14 @@
 
   .featured-post
     font-size: px-to-rem(20)
-    margin-bottom: 1.5rem
-
-  .title
-    color: #ffffff
-
-    +desktop
-      width: 720px
-      position: relative
-      z-index: 1
+    margin-bottom: 1rem
 
   .post-metadata
     font-size: px-to-rem(18)
     display: flex
+    .icon
+      margin-right: 1rem
     strong
-      color: #ffffff
       font-weight: 500
     .author
       margin-right: 2rem
@@ -45,13 +39,13 @@
 
   .featured-post,
   .post-metadata
-    color: rgba(255,255,255,0.8)
+    color: rgba(0,0,0,0.8)
 
   .blog-hero-image
     display: none
     flex: 1
-    margin-top: px-to-rem(65)
-    margin-bottom: px-to-rem(-40)
+    margin-top: px-to-rem(80)
+    margin-bottom: px-to-rem(80)
 
     .image
       padding-top: 540px / 780px * 100%
@@ -63,7 +57,6 @@
       top: 0
       width: 100%
       height: 100%
-      box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
       object-fit: cover
 
     +from($navbar-breakpoint)
@@ -179,7 +172,6 @@
 
       img
         width: 100%
-        box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
       +from($navbar-breakpoint)
         display: none
     > h1
