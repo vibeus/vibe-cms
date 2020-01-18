@@ -10,8 +10,6 @@ blogHeroMask: 0.2
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
-
-
 {{< common/srcset "cover.png" "" >}}
 
 
@@ -28,7 +26,7 @@ In this blog post, we’ll explore some different components of the Vibe smartbo
 ## Ideate
 
 
-{{< common/srcset "image-1.png" "brainstorming ideas on a smartboard" >}}
+{{< common/srcset "image-1.png" "Brainstorm project on Vibe smartboard" >}}
 
 
 Brainstorming can be the first step toward a great idea. With a Vibe smartboard, your team can list objectives, problems, and solutions; create flowcharts; and connect ideas to your company’s goals, all on a 55” 4K UHD touch screen.
@@ -39,9 +37,7 @@ When you’re done, you can save your brainstorming canvas for later, or share i
 
 
 ## Build
-
-
-{{< common/srcset "image-2.png" "Man thinking out ideas on smartboard" >}}
+{{< common/srcset "image-2.png" "UI/UX design on Vibe whiteboard" >}}
 
 
 Once you’ve settled on a product concept, your design team can use Vibe to draw early prototypes; experiment with things like shape, color, and materials; and map out production timelines. And thanks to Vibe’s advanced stylus, the stylus-to-touchscreen experience feels natural, like using a marker on a traditional whiteboard.
@@ -54,7 +50,7 @@ Get stuck? You can refer back to your brainstorming canvases at any time to keep
 ## Communicate
 
 
-{{< common/srcset "image-3.png" "Woman drafting ideas on smartboard" >}}
+{{< common/srcset "image-3.png" "Share your progress with your team" >}}
 
 
 When it’s time to share your progress you can use your favorite apps, like Microsoft Teams and Slack, to share content to any device via secure URL. You can also create a Vibe call to connect to other Vibe boards across the globe, and invite those without Vibe devices to join in on Skype or Zoom using a call code.
@@ -65,9 +61,7 @@ Vibe’s public sharing system includes features like guest mode, auto-expiring 
 
 
 ## Present
-
-
-{{< common/srcset "image-4.png" "sharing smartboard via video conference" >}}
+{{< common/srcset "image-4.png" "A smooth presentation using Vibe" >}}
 
 
 Ready to pitch a digital prototype? Vibe will make sure your presentation runs smoothly. The board is easy to transport, and the portable stand allows you to adapt to the layout of any room. And remember, if someone can’t make it to the physical presentation, they don’t have to miss out — you can use Vibe calls to share your product with long-distance shareholders, vendors, and buyers.

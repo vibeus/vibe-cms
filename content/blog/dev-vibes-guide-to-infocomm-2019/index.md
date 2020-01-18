@@ -1,11 +1,12 @@
 ---
-title: "Vibe’s Guide to InfoComm 2019"
+title: "InfoComm 2019, Vibe is waiting for you"
 slug: dev-vibes-guide-to-infocomm-2019
 author: Vibe Team
 date: 2019-06-11
 isfeatured: false
 tags: ["Infocomm"]
 draft: false
+blogHeroMask: 0.2
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
@@ -15,6 +16,7 @@ expiryDate: 2018-01-01 # This makes post only show in dev environment
 [InfoComm](https://www.infocommshow.org/) is the largest audio-visual and integrated experience event in North America. Each year, more than 1,000 exhibitors congregate at InfoComm to showcase thousands of new products for nearly 44,000 attendees from 110 countries. This year’s event is being held from June 8th to the 14th in sunny Orlando, FL.
 
 Is Vibe going to be there? Oh, you know we will. Charles Yang and Susie Deng from the Vibe team will be on the exhibition floor showing everyone what the [Vibe digital whiteboard](https://vibe.us/product/) is all about.
+
 What are we most excited about?
 
 
@@ -62,6 +64,7 @@ For the full lineup of events, check out the event explorer [here](https://www.c
 # Saying hi to everyone
 
 Without a doubt, our favorite part of InfoComm is meeting with fellow attendees and exhibitors. At this year’s event, the [Orange County Convention Center](https://www.occc.net/) will partner with [Hyatt Regency Orlando](https://www.hyatt.com/en-US/hotel/florida/hyatt-regency-orlando/mcoro) to offer a series of [industry-specific networking events](https://www.infocommshow.org/event-info/special-events/networking-receptions) for leaders in tech, retail, live events, and hospitality. There will also be a networking event designed to promote diversity.
+
 In addition, there will be a Women’s Council breakfast on Thursday morning that regularly sells out (don’t worry gents, you’re encouraged to join as well). Add your registration early to [secure a spot](https://www.compusystems.com/servlet/EventExplorerServlet?ACTION=LOAD_SA_EVT_EXP&EVT_UID=208&EVT_EXP_IDENT=81ds7&SEARCH_FIELD_opd_id=WTB&SEARCH_KEYWORD=keyword%20search).
 
 

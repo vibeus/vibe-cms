@@ -38,7 +38,7 @@ Collaborative workspaces take influence from freelancing practices by offering a
 
 Some settings will serve multiple uses. An office bar — complete with craft beer taps or espresso makers — can be a casual meeting space, a quiet workstation, or a social area depending on the time of day.
 
-{{< common/srcset "image-1.png" "group discussion in front of Vibe board" >}}
+{{< common/srcset "image-1.png" "Conversations in shared work spaces" >}}
 
 # Why Develop Collaborative Workspaces?
 
@@ -59,9 +59,10 @@ Technology makes the fostering of a team-forward work environment possible as we
 
 When meeting in-person, a digital whiteboard lets teams organize ideation sessions, visualize concepts, save digital post-its, and more.
 
-The [Vibe digital whiteboard](https://order.vibe.us/) even includes integrations to welcome remote workers to collaborative sessions from anywhere. All your notes are automatically saved to the Vibe cloud, where they can be quickly shared or revisited.
+The [Vibe digital whiteboard](https://vibe.us/) even includes integrations to welcome remote workers to collaborative sessions from anywhere. All your notes are automatically saved to the Vibe cloud, where they can be quickly shared or revisited.
 
-{{< common/srcset "image-2.png" "video conferencing for remote collaboration" >}}
+
+{{< common/srcset "image-2.png" "Integrated zoom for remote collaboration" >}}
 
 
 
@@ -98,4 +99,4 @@ Google’s second location on LA’s westside is housed in the old Spruce Goose 
 
 Want better tools for seamless collaboration? Our team is ready to talk.
 
-Connect with us.
+[Connect with us.](https://landing.vibe.us/request-demo)
