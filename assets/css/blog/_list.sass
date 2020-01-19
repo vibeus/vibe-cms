@@ -4,7 +4,7 @@
   +widescreen
     min-height: 670px
 
-  +tablet
+  +tablet-only
     min-height: 560px
     &.has-fullwidth-background
       min-height: 670px
@@ -39,17 +39,17 @@
       margin-right: auto
       padding-right: px-to-rem(20)
 
+    +tablet
+      padding-top: 2rem
+      padding-bottom: 2rem
+
     +mobile
       width: auto
       min-width: auto
       margin-right: auto
 
-    .title
-      +clamp-lines(6)
-      line-height: px-to-rem(70)
-
     .summary
-      font-size: px-to-rem(16)
+      font-size: px-to-rem(18)
       line-height: px-to-rem(26)
       color: #505F71
       +clamp-lines(3)
@@ -63,17 +63,19 @@
         margin-left: -1.5rem
         margin-right: -1.5rem
       +tablet
+        width: 100%
         min-width: 500px
+        height: 540px
 
         img
           width: 100%
           height: 100%
           object-fit: cover
 
-      @media screen and (min-width: 1440px) and (max-width: 1920px)
-        margin-right: calc(120px - (100vw - 1200px) / 2)
-      @media screen and (min-width: 1920px)
-        margin-right: -240px
+    @media screen and (min-width: 1440px) and (max-width: 1920px)
+      margin-right: calc(120px - (100vw - 1200px) / 2)
+    @media screen and (min-width: 1920px)
+      margin-right: -240px
 
     +tablet
       display: flex

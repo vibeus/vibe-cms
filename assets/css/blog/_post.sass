@@ -1,13 +1,15 @@
 .hero.is-blog-post
   background: white
-  border-bottom: 1px solid #E0E0E0
+
+  +from($navbar-breakpoint)
+    border-bottom: 1px solid #E0E0E0
 
   +mobile
     .hero-body
       padding-bottom: 64px
 
   .blog-hero-copy
-    +desktop
+    +from($navbar-breakpoint)
       width: 45.3125%
       padding-right: 30px
 
@@ -18,7 +20,9 @@
         min-height: 10rem
 
   .featured-post
-    font-size: px-to-rem(20)
+    font-size: px-to-rem(16)
+    +widescreen
+      font-size: px-to-rem(20)
     margin-bottom: 1rem
 
   .post-metadata
@@ -39,7 +43,7 @@
 
   .featured-post,
   .post-metadata
-    color: rgba(0,0,0,0.8)
+    color: #828282
 
   .blog-hero-image
     display: none
@@ -67,7 +71,7 @@
       +absolute-fill
 
 .section.is-blog-post
-  padding-top: 160px
+  padding-top: 120px
   padding-bottom: 120px
 
   > .container
@@ -151,9 +155,21 @@
     > p:not(:last-child)
       margin-bottom: 40px
     > p:first-child
-      margin-top: -160px - 40px
-      margin-bottom: 120px
+      margin-top: -120px - 40px
+      margin-bottom: 200px
       line-height: 0
+      position: relative
+
+      &:after
+        content: ' '
+        display: block
+        position: absolute
+        bottom: -80px
+        height: 1px
+        margin-left: 50%
+        left: -50vw
+        width: 100vw
+        background: #E0E0E0
 
       // BEGIN: dirty way to keep first image align with title width.
       @media screen and (min-width: 944px)
