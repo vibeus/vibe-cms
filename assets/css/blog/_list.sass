@@ -30,9 +30,11 @@
       bottom: 0
 
   .blog-hero-copy
-    width: 31.25vw
     min-width: 320px
     margin-right: 2rem
+
+    @media screen and (min-width: 960px)
+      min-width: 420px
 
     +widescreen
       width: 55%
@@ -44,7 +46,6 @@
       padding-bottom: 2rem
 
     +mobile
-      width: auto
       min-width: auto
       margin-right: auto
 
@@ -70,7 +71,7 @@
         img
           width: 100%
           height: 100%
-          object-fit: cover
+          object-fit: contain
 
     @media screen and (min-width: 1440px) and (max-width: 1920px)
       margin-right: calc(120px - (100vw - 1200px) / 2)
