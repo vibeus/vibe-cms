@@ -7,6 +7,7 @@ date: 2019-04-29
 tags: ["Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration", "Remote Collaboration"]
 draft: false
 summary: "Digital whiteboards, or smartboards, were invented to bring the tried-and-true dry erase whiteboard into the digital age."
+listHeroDesktopFont: ["42px", "52px"]
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---

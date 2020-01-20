@@ -14,7 +14,10 @@
     <a class="container" href="{{ .RelPermalink }}">
       <div class="blog-hero-copy">
         <div class="copy-content">
-          <h1 class="title is-vibe-heading">
+          <h1 class="title is-vibe-heading"
+              {{ with .Params.listHeroDesktopFont }}
+              style="font-size: {{ index . 0 }}; line-height: {{ index . 1 }}"
+              {{ end }}>
             {{ if .Draft }}[DRAFT]{{ end }}
             {{ replace (replaceRE "([^~])~([^~])" "$1<br/>$2" .Title) "~~" "~" | safeHTML }}
           </h1>
