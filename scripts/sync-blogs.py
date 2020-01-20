@@ -163,7 +163,7 @@ def main():
     global access_token
 
     parser = argparse.ArgumentParser(description='Sync blog posts from Dropbox Paper.')
-    parser.add_argument('--manifest', default='WKMNtdiJgFiILnlQJcLLG', help='The blog list doc.')
+    parser.add_argument('--manifest', default='XWvIYMXhbzTYauPlxCd7j', help='The blog list doc.')
     parser.add_argument('--token', help='Dropbox access token')
     parser.add_argument('--dev', action='store_true', help='download as dev post')
     args = parser.parse_args()
