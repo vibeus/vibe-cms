@@ -1,5 +1,5 @@
 module github.com/vibeus/vibe-blog
 
-go 1.12
+go 1.13
 
-require github.com/vibeus/hugo-common v0.0.0-20200319061049-d18ba00fffd4 // indirect
+require github.com/vibeus/hugo-common v1.0.0 // indirect
