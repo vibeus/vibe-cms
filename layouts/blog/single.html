@@ -1,3 +1,10 @@
+{{ define "stylesheets" }}
+{{ $sass := resources.Get "css/blog/styles.sass" }}
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) }}
+<style>
+{{ $style.Content | safeCSS }}
+</style>
+{{ end }}
 {{ define "main" }}<main class="blog-post">
 <section class="hero">
   <div class="hero-body">
