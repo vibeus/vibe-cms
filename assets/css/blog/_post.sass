@@ -1,83 +1,45 @@
-.hero.is-blog-post
-  background: white
-
-  +from($navbar-breakpoint)
-    border-bottom: 1px solid #E0E0E0
-
-  +mobile
-    .hero-body
-      padding-bottom: 64px
-
-  .blog-hero-copy
-    +from($navbar-breakpoint)
-      width: 45.3125%
-      padding-right: 30px
-
-    .after-copy
-      display: flex
-      align-items: flex-end
-      @media screen and (min-width: $tablet) and (max-width: $navbar-breakpoint - 1px)
-        min-height: 10rem
-
+.hero
+  background: $vibe-white
+  .hero-body
+    padding-top: 100px
+    padding-bottom: 32px
+  .container
+    max-width: 760px
   .featured-post
+    color: #828282
     font-size: px-to-rem(16)
     +widescreen
       font-size: px-to-rem(20)
     margin-bottom: 1rem
-
+  .title
+    +widescreen
+      font-size: 50px
+      line-height: 64px
   .post-metadata
-    font-size: px-to-rem(18)
+    font-size: px-to-rem(20)
     display: flex
+    align-items: center
     .icon
       margin-right: 1rem
-    strong
-      font-weight: 500
     .author
-      margin-right: 2rem
-    margin-bottom: 64px
-    +mobile
-      margin-top: 40px
-      margin-bottom: 0
-    +from($navbar-breakpoint)
-      margin-bottom: 40px
+      font-weight: $vibe-bold
+      color: $vibe-purple
 
-  .featured-post,
-  .post-metadata
-    color: #828282
-
-  .blog-hero-image
-    display: none
-    flex: 1
-    margin-top: px-to-rem(80)
-    margin-bottom: px-to-rem(80)
-
-    .image
-      padding-top: 540px / 780px * 100%
-      height: 0
-
-    img
-      position: absolute
-      left: 0
-      top: 0
-      width: 100%
-      height: 100%
-      object-fit: cover
-
-    +from($navbar-breakpoint)
-      display: block
-      margin-right: -80px
-
-    .blog-hero-mask
-      +absolute-fill
-
+.section.is-hero-image,
 .section.is-blog-post
-  padding-top: 120px
-  padding-bottom: 120px
-
   > .container
-    max-width: px-to-rem(694)
+    max-width: px-to-rem(760)
     +until($navbar-breakpoint)
       max-width: px-to-rem(400)
+
+.section.is-hero-image
+  padding-top: 0
+  padding-bottom: 0
+  background: linear-gradient(to bottom, $vibe-white 50%, #FFFFFF 50%)
+
+.section.is-blog-post
+  padding-top: 50px
+  padding-bottom: 120px
 
   .heading-image
     background: #FBFBFB
@@ -154,45 +116,9 @@
         color: #bdbdbd
     > p:not(:last-child)
       margin-bottom: 40px
-    > p:first-child
-      margin-top: -120px - 40px
-      margin-bottom: 200px
-      line-height: 0
-      position: relative
-
-      &:after
-        content: ' '
-        display: block
-        position: absolute
-        bottom: -80px
-        height: 1px
-        margin-left: 50%
-        left: -50vw
-        width: 100vw
-        background: #E0E0E0
-
-      // BEGIN: dirty way to keep first image align with title width.
-      @media screen and (min-width: 944px)
-        margin-left: -192px
-        margin-right: -192px
-      @media screen and (min-width: 784px) and (max-width: 943px)
-        margin-left: -112px
-        margin-right: -112px
-      @media screen and (min-width: $tablet) and (max-width: 784px)
-        margin-left: calc(80px - (100vw - 400px) / 2)
-        margin-right: calc(80px - (100vw - 400px) / 2)
-      @media screen and (min-width: 448px) and (max-width: $tablet)
-        margin-left: calc(24px - (100vw - 400px) / 2)
-        margin-right: calc(24px - (100vw - 400px) / 2)
-      // END: keep first image align with title width.
-
-      img
-        width: 100%
-      +from($navbar-breakpoint)
-        display: none
     > h1
       margin-top: px-to-rem(80)
     > h2
       margin-top: px-to-rem(64)
     strong
-      font-weight: 500
+      font-weight: $vibe-bold

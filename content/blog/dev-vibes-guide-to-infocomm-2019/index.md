@@ -6,11 +6,11 @@ date: 2019-06-11
 isfeatured: false
 tags: ["Infocomm"]
 draft: false
-blogHeroMask: 0.2
+blogHeroMask: 0
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
-{{< common/srcset "cover.png" "" >}}
+
 
 
 [InfoComm](https://www.infocommshow.org/) is the largest audio-visual and integrated experience event in North America. Each year, more than 1,000 exhibitors congregate at InfoComm to showcase thousands of new products for nearly 44,000 attendees from 110 countries. This year’s event is being held from June 8th to the 14th in sunny Orlando, FL.

@@ -1,6 +1,7 @@
-.hero.is-blog-list
-  background: white
+.hero
+  background-color: $vibe-yellow
   position: relative
+  overflow: hidden
   +widescreen
     min-height: 670px
 
@@ -9,8 +10,11 @@
     &.has-fullwidth-background
       min-height: 670px
 
-  +mobile
-    .hero-body
+  .hero-body
+    display: flex
+    +tablet
+      padding: 0
+    +mobile
       padding-bottom: 0  // remove padding on bottom of hero image in mobile.
 
   .hero-background
@@ -29,6 +33,38 @@
       top: 0
       bottom: 0
 
+  .container
+    display: flex
+    align-items: center
+    +mobile
+      display: block
+      > *:first-child
+        margin-bottom: 2rem
+
+    +desktop
+      +padded-container(1200px, 60px, 60px)
+    +tablet-only
+      +padded-container(784px, 80px, 0)
+
+  // Distribute vertical paddings of blog copy (title and summary) to be 40:60
+  // Element with blog-hero-copy class must have exact 3 children:
+  // 1. a block element with class 'before-copy'
+  // 2. a block element with class 'copy-content'
+  // 3. a block element with class 'after-copy'
+  // The element must be put under .hero-body and take full height of .hero-body.
+  // The reason that CSS :before and :after is not used here is that in some case, we need to
+  // put stuff in top or bottom padding elements.
+  .blog-hero-copy
+    +tablet
+      display: flex
+      flex-direction: column
+      > .before-copy
+        flex: 2
+        min-height: 4rem
+      > .after-copy
+        flex: 3
+        min-height: 6rem
+
   .blog-hero-copy
     min-width: 320px
     margin-right: 2rem
@@ -37,7 +73,7 @@
       min-width: 420px
 
     +widescreen
-      width: 55%
+      width: 50%
       margin-right: auto
       padding-right: px-to-rem(20)
 
@@ -52,7 +88,6 @@
     .summary
       font-size: px-to-rem(18)
       line-height: px-to-rem(26)
-      color: #505F71
       +clamp-lines(3)
 
   .blog-hero-image
@@ -82,12 +117,24 @@
       display: flex
       align-items: stretch
 
+  .title
+    font-size: px-to-rem(32)
+    line-height: px-to-rem(42)
+    margin-bottom: 1rem
+    +widescreen
+      margin-bottom: px-to-rem(48)
+      font-size: px-to-rem(50)
+      line-height: px-to-rem(64)
+    +mobile
+      font-size: px-to-rem(40)
+      line-height: px-to-rem(50)
+
 .section.is-blog-list
   padding-bottom: 40px
   padding-top: 40px
   +widescreen
-    padding-bottom: 120px
-    padding-top: 120px
+    padding-bottom: 80px
+    padding-top: 80px
 
   .container
     +desktop
@@ -134,13 +181,8 @@
         display: flex
         align-items: center
         font-size: px-to-rem(14)
-        color: $link-hover
-        fill: $link-hover
-        span
-          line-height: 22px
-          font-weight: 500
-        .icon
-          margin-left: -0.25rem
+        color: $vibe-purple
+        font-weight: $vibe-bold
 
   .card-image
     width: 100%

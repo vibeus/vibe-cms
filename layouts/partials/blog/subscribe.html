@@ -2,20 +2,26 @@
 {{ $formId := "b27f948e-cde2-4a69-845e-8a7dc69a8134" }}
 
 <section class="section is-blog-subscribe">
+  <div class="bottom-bg">
+    {{ (resources.Get "img/common/icon-bg.svg").Content | safeHTML }}
+  </div>
   <div class="container">
     <h2 class="title is-vibe-heading">
-      Subscribe to our blog to get updates on all things @Vibe
+      Subscribe to get updates on all things at Vibe
     </h2>
     <div class="subscribe-form">
-      <form id="subscribe-blog" action="https://forms.hubspot.com/uploads/form/v2/{{ $portalId }}/{{ $formId }}" method="POST">
+      <form id="subscribe-blog" action="https://api.hsforms.com/submissions/v3/integration/submit/{{ $portalId }}/{{ $formId }}" method="POST">
         <div class="field has-addons">
           <div class="control is-email">
-            <input class="input is-medium" type="email" placeholder="Email" name="EMAIL" />
+            <input class="input is-medium is-rounded is-black is-outlined" type="email" placeholder="Email" name="email" />
           </div>
           <div class="control is-submit">
-            <input type="submit" class="button is-medium is-info is-fullwidth" value="Subscribe" />
+            <button type="submit" class="button is-medium is-black is-rounded is-fullwidth">Subscribe</button>
           </div>
         </div>
+        <p class="privacy">
+        Read our <a href="/privacy/">privacy policy</a>.
+        </p>
       </form>
       <div class="thank-you">
         Thank you for subscribing Vibe's blog!

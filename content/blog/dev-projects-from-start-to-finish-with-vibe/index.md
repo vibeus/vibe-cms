@@ -6,11 +6,11 @@ date: 2019-07-22
 isfeatured: false
 tags: ["Vibe Smartboard"]
 draft: false
-blogHeroMask: 0.2
+blogHeroMask: 0
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
-{{< common/srcset "cover.png" "" >}}
+
 
 
 Thanks to innovative technology, workspaces are becoming more flexible and [collaborative](https://medium.com/vibe-team/how-to-build-a-collaborative-workspace-and-why-you-should-e3eaebbf799e) in order to foster teamwork and engagement, sparking [positive results](https://hbr.org/2014/10/workspaces-that-move-people) for both companies and employees. Even if you’re not ready to redesign the entire office, you can still create this collaborative atmosphere by adding an interactive whiteboard to your workspace.

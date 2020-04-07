@@ -1,13 +1,23 @@
 .section.is-blog-subscribe
-  background: #FBFBFB
+  overflow: hidden
+  position: relative
+  background: $vibe-teal
   padding: px-to-rem(80) 1.5rem
   +widescreen
     padding: px-to-rem(120) 1.5rem
   +mobile
     padding: px-to-rem(60) 1.5rem
 
+  .bottom-bg
+    position: absolute
+    top: 60px
+    right: -250px
+    svg
+      width: 528px
+      height: 477px
+
   .container
-    max-width: 560px
+    max-width: 682px
     +tablet-only
       max-width: 370px
     +desktop-only
@@ -16,27 +26,27 @@
     .title
       text-align: center
       line-height: 50px
-      margin-bottom: 4rem
       font-size: px-to-rem(22)
       line-height: 2rem
       +widescreen
-        font-size: 2rem
-        line-height: px-to-rem(50)
+        margin-bottom: 4rem
+        font-size: px-to-rem(50)
+        line-height: px-to-rem(64)
 
   .thank-you
     display: none
     text-align: center
 
   .subscribe-form
+    max-width: 532px
+    margin: auto
     .control
       box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08)
       border-radius: 6px
-
       &.is-email
         flex: 1
         .input
-          border-color: transparent
-          box-shadow: none
+          border-width: 2px
           padding-left: 1.5rem
           z-index: 1
           &:hover,
@@ -44,7 +54,6 @@
           &:focus
             +placeholder
               color: #333
-
       &.is-submit
         width: 104px
         +mobile
@@ -52,12 +61,19 @@
         +widescreen
           width: 180px
         .button
+          font-weight: $vibe-bold
+          +widescreen
+            font-size: 24px
           &:hover,
           &:active,
           &:focus
             z-index: 0
-
-    input
+    .privacy
+      text-align: center
+      a
+        font-weight: $vibe-bold
+        text-decoration: underline
+    .input, .button
       height: 48px
       font-size: px-to-rem(14)
 

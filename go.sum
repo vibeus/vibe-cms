@@ -1,4 +1,2 @@
-github.com/vibeus/hugo-common v1.0.0 h1:CTWVoendTGHz3wA0l4HANG4UbS2cEimCFfFTqQmjzqI=
-github.com/vibeus/hugo-common v1.0.0/go.mod h1:4G98No0CyurLjRLhERGgAomTUQdtNynInoCUwIgE9C0=
-github.com/vibeus/hugo-common v1.0.1 h1:ZdGYnJ79UVDkw/kQjl2h+a11rmRev53TY/oT+IHd5w4=
-github.com/vibeus/hugo-common v1.0.1/go.mod h1:4G98No0CyurLjRLhERGgAomTUQdtNynInoCUwIgE9C0=
+github.com/vibeus/hugo-common v1.0.1-0.20200407190741-01330a0eaf17 h1:mJ5y33BYMYK4tCYFNygovEUM4ildO8jmSCQbbSjXrUY=
+github.com/vibeus/hugo-common v1.0.1-0.20200407190741-01330a0eaf17/go.mod h1:4G98No0CyurLjRLhERGgAomTUQdtNynInoCUwIgE9C0=

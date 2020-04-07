@@ -6,11 +6,11 @@ date: 2019-03-25
 isfeatured: false
 tags: ["Coworking", "Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration"]
 draft: false
-blogHeroMask: 0.2
+blogHeroMask: 0
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
-{{< common/srcset "cover.png" "" >}}
+
 
 
 The workforce is more diverse and distributed than ever, and this new paradigm needs a new style of workspace to thrive. A lot of companies are experimenting with ways to create new spaces for their teams to operate in that are optimized to support outside the box thinking.

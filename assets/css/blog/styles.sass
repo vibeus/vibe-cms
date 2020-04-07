@@ -10,7 +10,11 @@
     padding-left: calc(#{$padding-left} - (100vw - #{$max-width}) / 2)
     padding-right: calc(#{$padding-right} - (100vw - #{$max-width}) / 2)
 
-@import "_hero.sass"
-@import "_list.sass"
-@import "_post.sass"
 @import "_subscribe.sass"
+
+main.blog-list
+  @import "_list.sass"
+
+main.blog-post
+  @import "_post.sass"
+

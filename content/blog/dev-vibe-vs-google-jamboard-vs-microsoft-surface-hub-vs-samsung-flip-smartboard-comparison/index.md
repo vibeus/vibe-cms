@@ -1,17 +1,17 @@
 ---
-title: "Vibe vs Microsoft Surface Hub vs Google Jamboard vs Sumsung Flipboard: Smartboard Comparison"
+title: "Vibe vs Microsoft Surface Hub vs Google Jamboard vs Samsung Flipboard: Smartboard Comparison"
 slug: dev-vibe-vs-google-jamboard-vs-microsoft-surface-hub-vs-samsung-flip-smartboard-comparison
 author: Vibe Team
-isfeatured: true
+isfeatured: false
 date: 2019-04-29
 tags: ["Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration", "Remote Collaboration"]
 draft: false
 summary: "Digital whiteboards, or smartboards, were invented to bring the tried-and-true dry erase whiteboard into the digital age."
-listHeroDesktopFont: ["42px", "52px"]
+listHeroDesktopFont: ["45px", "55px"]
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
-{{< common/srcset "cover.png" "" >}}
+
 
 
 Digital whiteboards, or smartboards, were invented to bring the tried-and-true dry erase whiteboard into the digital age.

@@ -124,6 +124,9 @@ def download_images(content, directory):
                     if basename == 'cover':
                         has_cover = True
 
+                        # new blog style does not need cover in md file
+                        line = ''
+
         if not any_match and line.strip():
             has_content = True
 

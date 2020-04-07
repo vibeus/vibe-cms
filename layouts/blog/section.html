@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{ define "main" }}<main class="blog-list">
 {{ $heroSlug := "" }}
 {{ with default (index .Pages.ByDate.Reverse 0) (index (where .Pages.ByDate.Reverse "Params.isfeatured" true) 0) }}
 {{ $heroSlug = .Slug }}
@@ -67,10 +67,7 @@
                 </p>
               </div>
               <div class="more">
-                <span>Read More</span>
-                <span class="icon">
-                  {{ partial "common/mdi" "chevron-right" }}
-                </span>
+                <span>Read More →</span>
               </div>
             </div>
           </div>
@@ -82,4 +79,4 @@
 </section>
 
 {{ partial "blog/subscribe.html" . }}
-{{ end }}
+</main>{{ end }}

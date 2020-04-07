@@ -6,11 +6,11 @@ date: 2019-12-03
 isfeatured: false
 tags: ["Interactive Whiteboard", "Smart Whiteboard", "Small Business", "Smartboard Collaboration"]
 draft: false
-blogHeroMask: 0.2
+blogHeroMask: 0
 expiryDate: 2018-01-01 # This makes post only show in dev environment
 
 ---
-{{< common/srcset "cover.png" "" >}}
+
 
 
 The whiteboard has been a popular medium for problem solving since its early introduction to the workplace in the 90s. So popular, in fact, that whole modes of collaboration have sprung up around it.
