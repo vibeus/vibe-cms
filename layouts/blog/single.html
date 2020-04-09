@@ -5,6 +5,28 @@
 {{ $style.Content | safeCSS }}
 </style>
 {{ end }}
+
+{{ define "scripts" }}
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+{{ end }}
+
 {{ define "main" }}<main class="blog-post">
 <section class="hero">
   <div class="hero-body">
@@ -42,6 +64,24 @@
 
 <section class="section is-blog-post">
   <div class="container">
+    <div class="side-bar is-hidden-mobile">
+      <div class="share-buttons">
+        <a class="share-twitter" href="https://twitter.com/intent/tweet?text={{ print .Title }}">
+          <span class="icon is-medium">{{ partial "common/mdi" "twitter:24" }}</span>
+        </a>
+
+        <a class="share-facebook fb-xfbml-parse-ignore"
+           href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank">
+          <span class="icon is-medium">{{ partial "common/mdi" "facebook:24" }}</span>
+        </a>
+
+        <a class="share-linkedin"
+           href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}&amp;summary={{ .Summary }}&amp;source=http%3A%2F%2Fvibe.us"
+           target="_blank" rel="noopener" aria-label="">
+          <span class="icon is-medium">{{ partial "common/mdi" "linkedin:24" }}</span>
+        </a>
+      </div>
+    </div>
     <div class="content has-vibe-heading">
       {{ .Content }}
     </div>

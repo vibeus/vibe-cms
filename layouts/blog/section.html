@@ -63,7 +63,6 @@
                   {{ replace (replaceRE "([^~])~([^~])" "$1 $2" .Title) "~~" "~" | safeHTML }}
                 </h2>
                 <p class="summary">
-                {{ .Summary | plainify | safeHTML }}
                 </p>
               </div>
               <div class="more">
