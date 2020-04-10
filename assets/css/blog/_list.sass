@@ -36,6 +36,9 @@
   .container
     display: flex
     align-items: center
+    &:hover
+      .more
+        opacity: 1
     +mobile
       display: block
       > *:first-child
@@ -91,6 +94,13 @@
       line-height: px-to-rem(26)
       +clamp-lines(2)
 
+    .more
+      margin-top: 16px
+      font-weight: $vibe-bold
+      color: $vibe-black
+      opacity: 0
+      transition: opacity 0.25s
+
   .blog-hero-image
     flex: 1
 
@@ -129,8 +139,6 @@
     +mobile
       font-size: px-to-rem(40)
       line-height: px-to-rem(50)
-    &:hover
-      text-decoration: underline
 
 .section.is-blog-list
   padding-bottom: 40px
