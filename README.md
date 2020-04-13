@@ -6,7 +6,6 @@
 3. `hugo server`
 4. Open your favourite browser and navigate to
    * http://localhost:1313/blog
-   * http://localhost:1313/help
 
 ## Replace hugo-common with local clone
 If you want to update [hugo-common][1] and test on you local clone first, you can use [mod replace][2].
