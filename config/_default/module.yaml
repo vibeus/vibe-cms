@@ -1,2 +1,2 @@
 imports:
-  - path: github.com/vibeus/hugo-common
+  - path: github.com/vibeus/hugo-common/v2

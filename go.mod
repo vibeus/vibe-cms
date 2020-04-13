@@ -1,5 +1,5 @@
-module github.com/vibeus/vibe-cms
+module github.com/vibeus/vibe-cms/v2
 
 go 1.13
 
-require github.com/vibeus/hugo-common v1.0.1-0.20200413203009-dd0404471767 // indirect
+require github.com/vibeus/hugo-common/v2 v2.0.0 // indirect
