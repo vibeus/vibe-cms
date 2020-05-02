@@ -1,0 +1,56 @@
+{{ define "stylesheets" }}
+{{ $sass := resources.Get "css/blog/styles.sass" }}
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed" "includePaths" (slice "node_modules" "assets/css/common")) }}
+<style>
+{{ $style.Content | safeCSS }}
+</style>
+{{ end }}
+
+{{ define "main" }}<main class="blog-post">
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      {{ if .Params.isFeatured }}
+      <div class="featured-post">Featured Post</div>
+      {{ end }}
+      <div class="title is-vibe-heading">
+        {{ if .Draft }}[DRAFT]{{ end }}
+        {{ replace (replaceRE "([^~])~([^~])" "$1<br/>$2" .Title) "~~" "~" | safeHTML }}
+      </div>
+      <div class="post-metadata">
+        <span class="icon">
+          {{ $src := resources.Get "img/blog/vibe-author-logo.svg" | resources.Minify }}
+          {{ $src.Content | safeHTML }}
+        </span>
+        <div class="author">
+          by {{ .Params.author }},
+          {{ .Date.Format "January 2, 2006" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ with .Resources.GetMatch "cover.{jpg,png}" }}
+<section class="section is-hero-image">
+  <div class="container">
+    <figure class="image is-cover">
+      {{ partial "common/srcset" (dict "resource" . "desktop" "1680x" "tablet" "840x" "options" "jpg") }}
+    </figure>
+  </div>
+</section>
+{{ end }}
+
+<section class="section is-blog-post">
+  <div class="container">
+    <div class="side-bar is-hidden-mobile">
+      {{ partial "common/share-buttons" (dict "title" .Title "summary" .Summary "url" .Permalink) }}
+    </div>
+    <div class="content has-vibe-heading">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{ partial "blog/subscribe.html" . }}
+</main>{{ end }}

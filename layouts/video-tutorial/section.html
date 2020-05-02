@@ -1,0 +1,84 @@
+{{ define "main" }}<main class="blog-list">
+{{ $heroSlug := "" }}
+{{ with default (index .Pages.ByDate.Reverse 0) (index (where .Pages.ByDate.Reverse "Params.isfeatured" true) 0) }}
+{{ $heroSlug = .Slug }}
+{{ $fullwidthHero := .Resources.GetMatch "cover-fullwidth.{jpg,png}" }}
+<section class="hero is-blog-list{{ if $fullwidthHero }} has-fullwidth-background{{ end }}">
+  {{ with $fullwidthHero }}
+  <div class="hero-background is-hidden-mobile">
+    {{ partial "common/srcset" (dict "resource" . "desktop" "2560x" "tablet" "1024x" "options" "jpg") }}
+    <div class="hero-bg-blur"></div>
+  </div>
+  {{ end }}
+  <div class="hero-body">
+    <a class="container" href="https://www.youtube.com/watch?v={{ .Params.videoId }}" target="_blank">
+      <div class="blog-hero-copy">
+        <div class="copy-content">
+          <h1 class="title is-vibe-heading"
+              {{ with .Params.listHeroDesktopFont }}
+              style="font-size: {{ index . 0 }}; line-height: {{ index . 1 }}"
+              {{ end }}>
+            {{ if .Draft }}[DRAFT]{{ end }}
+            {{ replace (replaceRE "([^~])~([^~])" "$1<br/>$2" .Title) "~~" "~" | safeHTML }}
+          </h1>
+          <p class="summary">
+          {{ .Summary }}
+          </p>
+          <div class="more">
+            Watch on Youtube →
+          </div>
+        </div>
+      </div>
+      <div class="blog-hero-image">
+        {{ with default (.Resources.GetMatch "cover.{jpg,png}") $fullwidthHero }}
+          <figure class="image is-hero{{ if $fullwidthHero }} is-hidden-tablet{{ end }}">
+            {{ partial "common/srcset" (dict "resource" . "desktop" "1200x" "tablet" "1024x" "options" "jpg") }}
+          </figure>
+        {{ end }}
+      </div>
+    </a>
+  </div>
+</section>
+{{ end }}
+
+<section class="section is-blog-list">
+  <div class="container">
+    <div class="columns is-multiline">
+      {{ range (where .Pages.ByDate.Reverse "Slug" "!=" $heroSlug) }}
+      <div class="column is-half-tablet is-one-third-desktop">
+        <a href="https://www.youtube.com/watch?v={{ .Params.videoId }}" target="_blank">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                {{ $cover := .Resources.GetMatch "cover.{jpg,jpeg,png}" }}
+                {{ if $cover }}
+                {{ partial "common/srcset" (dict "resource" $cover "desktop" "800x" "tablet" "600x" "options" "jpg") }}
+                {{ else }}
+                {{ $default := resources.Get "img/blog/default-cover.png" | resources.Fingerprint }}
+                <img src="{{ $default.Permalink }}" alt="{{ $default.Name }}">
+                {{ end }}
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-vibe-heading">
+                <h2>
+                  {{ if .Draft }}[DRAFT]{{ end }}
+                  {{ replace (replaceRE "([^~])~([^~])" "$1 $2" .Title) "~~" "~" | safeHTML }}
+                </h2>
+                <p class="summary">
+                </p>
+              </div>
+              <div class="more">
+                <span>Watch on Youtube →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "blog/subscribe.html" . }}
+</main>{{ end }}
