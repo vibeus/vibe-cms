@@ -11,7 +11,7 @@
   </div>
   {{ end }}
   <div class="hero-body">
-    <a class="container" href="https://www.youtube.com/watch?v={{ .Params.videoId }}" target="_blank">
+    <a class="container video-launcher-popup" href="https://www.youtube.com/watch?v={{ .Params.videoId }}" data-target="video-popup-player" data-video-id="{{ .Params.videoId }}">
       <div class="blog-hero-copy">
         <div class="copy-content">
           <h1 class="title is-vibe-heading"
@@ -25,7 +25,7 @@
           {{ .Summary }}
           </p>
           <div class="more">
-            Watch on Youtube →
+            Watch video →
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
     <div class="columns is-multiline">
       {{ range (where .Pages.ByDate.Reverse "Slug" "!=" $heroSlug) }}
       <div class="column is-half-tablet is-one-third-desktop">
-        <a href="https://www.youtube.com/watch?v={{ .Params.videoId }}" target="_blank">
+        <a href="https://www.youtube.com/watch?v={{ .Params.videoId }}" class="video-launcher-popup" data-target="video-popup-player" data-video-id="{{ .Params.videoId }}">
           <div class="card">
             <div class="card-image">
               <figure class="image">
@@ -70,7 +70,7 @@
                 </p>
               </div>
               <div class="more">
-                <span>Watch on Youtube →</span>
+                <span>Watch video →</span>
               </div>
             </div>
           </div>
@@ -79,6 +79,7 @@
       {{ end }}
     </div>
   </div>
+  {{ partial "common/video-player" (dict "playerId" "video-popup-player" "triggerClass" ".video-launcher-popup" "isInplace" false) }}
 </section>
 
 {{ partial "blog/subscribe.html" . }}
