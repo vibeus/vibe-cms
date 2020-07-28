@@ -3,7 +3,9 @@
 {{ with default (index .Pages.ByDate.Reverse 0) (index (where .Pages.ByDate.Reverse "Params.isfeatured" true) 0) }}
 {{ $heroSlug = .Slug }}
 {{ $fullwidthHero := .Resources.GetMatch "cover-fullwidth.{jpg,png}" }}
-<section class="hero is-blog-list{{ if $fullwidthHero }} has-fullwidth-background{{ end }}">
+<section class="hero is-blog-list{{ if $fullwidthHero }} has-fullwidth-background{{ end }}"
+         {{ with .Params.hero_styles }}style="{{ range $k, $v := . }}{{ $k }}:{{ $v }};{{ end }}"{{ end }}
+         >
   {{ with $fullwidthHero }}
   <div class="hero-background is-hidden-mobile">
     {{ partial "common/srcset" (dict "resource" . "desktop" "2560x" "tablet" "1024x" "options" "jpg") }}
