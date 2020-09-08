@@ -13,10 +13,10 @@
       {{ if .Params.isFeatured }}
       <div class="featured-post">Featured Post</div>
       {{ end }}
-      <div class="title is-vibe-heading">
+      <h1 class="title is-vibe-heading">
         {{ if .Draft }}[DRAFT]{{ end }}
         {{ replace (replaceRE "([^~])~([^~])" "$1<br/>$2" .Title) "~~" "~" | safeHTML }}
-      </div>
+      </h1>
       <div class="post-metadata">
         <span class="icon">
           {{ $src := resources.Get "img/blog/vibe-author-logo.svg" | resources.Minify }}

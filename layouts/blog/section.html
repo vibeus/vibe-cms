@@ -63,10 +63,10 @@
             </div>
             <div class="card-content">
               <div class="content has-vibe-heading">
-                <h2>
+                <h1>
                   {{ if .Draft }}[DRAFT]{{ end }}
                   {{ replace (replaceRE "([^~])~([^~])" "$1 $2" .Title) "~~" "~" | safeHTML }}
-                </h2>
+                </h1>
                 <p class="summary">
                 </p>
               </div>
