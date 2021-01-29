@@ -6,6 +6,15 @@
 </style>
 {{ end }}
 
+{{ define "extraMetas" }}
+{{ with .Resources.GetMatch "cover.{jpg,png}" }}
+{{ $url := .Resize ("640x jpeg") | resources.Fingerprint }}
+<meta property="og:image" content="{{ $url.Permalink }}" />
+<meta property="og:url" content="{{ $.Permalink }}" />
+<meta name="twitter:image" content="{{ $url.Permalink }}" />
+{{ end }}
+{{ end }}
+
 {{ define "main" }}<main class="blog-post">
 <section class="hero">
   <div class="hero-body">
